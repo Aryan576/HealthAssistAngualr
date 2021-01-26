@@ -1,13 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>HealthAssist</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>HealthAssist</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <app-root></app-root>
+    <script type="text/javascript">
+      const toggleForm = () => {
+        const container = document.querySelector(".container");
+        container.classList.toggle("active");
+      };
+
+      class FullSlider {
+        constructor(_element = null, _options = {}) {
+          this.element = _element;
+          this.options = {
+            ...{
+              autoSlide: true,
+              duration: 3000,
+            },
+            ..._options,
+          };
+
+          this.slides = [...this.element.querySelectorAll(".js-slide")];
+          this.prevBtn = this.element.querySelector(".js-slide-prev");
+          this.nextBtn = this.element.querySelector(".js-slide-next");
+
+          this.autoSlideInterval = null;
+
+          this.init();
+        }
+
+        init() {
+          if (this.options.autoSlide) {
+            this.autoSlideInterval = setInterval(
+              this.goNext.bind(this),
+              this.options.duration
+            );
+          }
+
+          this.addEvents();
+        }
+
+        goPrev() {
+          const activeSlide = this.element.querySelector(".is-active");
+          const prevSlide = activeSlide.previousElementSibling;
+          activeSlide.classList.remove("is-active");
+          if (prevSlide) {
+            prevSlide.classList.add("is-active");
+            return;
+          }
+
+          const slidesLength = this.slides.length - 1;
+          const lastSlide = this.slides[slidesLength];
+          lastSlide.classList.add("is-active");
+        }
+
+        goNext() {
+          const activeSlide = this.element.querySelector(".is-active");
+          const nextSlide = activeSlide.nextElementSibling;
+          const nextSlideClassList = [...nextSlide.classList];
+          activeSlide.classList.remove("is-active");
+          if (nextSlideClassList.indexOf("js-slide") > 0) {
+            nextSlide.classList.add("is-active");
+            return;
+          }
+
+          this.slides[0].classList.add("is-active");
+        }
+
+        addEvents() {
+          this.prevBtn.addEventListener("click", () => {
+            this.goPrev();
+
+            if (this.autoSlideInterval) {
+              clearInterval(this.autoSlideInterval);
+            }
+          });
+
+          this.nextBtn.addEventListener("click", () => {
+            this.goNext();
+
+            if (this.autoSlideInterval) {
+              clearInterval(this.autoSlideInterval);
+            }
+          });
+        }
+      }
+
+      //---
+
+      window.addEventListener("DOMContentLoaded", () => {
+        const fullSliders = [...document.querySelectorAll(".js-full-slider")];
+        if (fullSliders.length) {
+          for (let element of fullSliders) {
+            new FullSlider(element);
+          }
+        }
+      });
+
+
+
+    </script>
+  </body>
 </html>
