@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ServicesModule } from './services/services.module';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
@@ -21,12 +23,13 @@ import { FooterComponent } from './footer/footer.component';
     MDBBootstrapModule.forRoot(),
     ToastModule,
     SignupLoginModule,
+    ServicesModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

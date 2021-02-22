@@ -123,7 +123,7 @@ p {
 
 a {
   text-decoration: none;
-  color: #d1d1d1;
+  color: white;
 }
 
 a:hover {
@@ -139,7 +139,7 @@ a:hover {
   font-weight: 300;
   letter-spacing: 0.03em;
   font-size: 13px;
-  color: #d1d1d1;
+  color: white;
   position: absolute;
   top: 260px;
   clear: both;

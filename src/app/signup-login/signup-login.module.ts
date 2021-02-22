@@ -4,10 +4,13 @@ import { SignupLoginRoutingModule } from './signup-login-routing.module';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SignupLoginComponent } from './signup-login/signup-login.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { OtpVerifyComponent } from './otp-verify/otp-verify.component';
 
 
 @NgModule({
-  declarations: [SignupComponent],
+  declarations: [SignupComponent, SignupLoginComponent, ResetPasswordComponent, OtpVerifyComponent],
   imports: [
     CommonModule,
     SignupLoginRoutingModule,
