@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ServicesModule } from './services/services.module';
 import { MessageService } from 'primeng/api';
+import { AdminModule } from './admin/admin.module';
+import { DataTablesModule } from "angular-datatables";
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
@@ -23,11 +25,12 @@ import { MessageService } from 'primeng/api';
     MDBBootstrapModule.forRoot(),
     ToastModule,
     SignupLoginModule,
+    AdminModule,
     ServicesModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    DataTablesModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent],

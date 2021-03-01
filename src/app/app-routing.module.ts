@@ -11,7 +11,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'signup-login',component:SignupComponent},
   {path:'reset-password',component:ResetPasswordComponent},
-  {path:'otp-verify',component:OtpVerifyComponent}
+  {path:'otp-verify',component:OtpVerifyComponent},
+
 ];
 
 @NgModule({

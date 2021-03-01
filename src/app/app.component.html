@@ -1,5 +1,5 @@
-<app-header></app-header>
+<app-header *ngIf="!(userData.user != null && userData.user.roleId == 2)"></app-header>
 <router-outlet>
   <p-toast></p-toast>
 </router-outlet>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->

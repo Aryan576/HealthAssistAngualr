@@ -26,7 +26,7 @@ export class ResetPasswordComponent implements OnInit {
         if(res.status == 200){
           console.log(res.msg);
           this.messageService.add({severity:'success', summary: 'Success', detail:'OTP sent on your Email!!'});
-          this.rout.navigateByUrl('otp-verify');
+          this.rout.navigateByUrl('signup-login');
         }
         else{
           this.messageService.add({severity:'error', summary: 'Error', detail:'User Not Found!!'});

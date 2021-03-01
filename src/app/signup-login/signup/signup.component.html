@@ -30,7 +30,7 @@
     </div>
     <div class="user signupBx">
       <div class="formBx">
-        <form action="" [formGroup]="signupForm" onsubmit="return false;">
+        <form action="" [formGroup]="signupForm" (ngSubmit)="signup()" onsubmit="return false;">
           <h2>Join HealthAssist</h2>
           <input
             type="text"
@@ -78,20 +78,19 @@
             </div>
           </div>
 
-          <select formControlName="roleId">
+          <!-- <select formControlName="roleId">
             <option value="" disabled>Choose Role</option>
             <option *ngFor="let l of list" value="{{ l.roleId }}">
               {{ l.roleName }}
             </option>
-          </select>
+          </select> -->
           <input
             type="password"
             id="p"
             formControlName="password"
             placeholder="Create Password"
           />
-          <input type="password" id="c" placeholder="Confirm Password" />
-          <!-- <div *ngIf="c.valid && c.touched != p.value"></div> -->
+          <!-- <input type="password" id="c" placeholder="Confirm Password" /> -->
           <input type="submit" value="Sign Up" />
           <p class="signup">
             Already have an account ?
