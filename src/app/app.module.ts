@@ -15,6 +15,10 @@ import { ServicesModule } from './services/services.module';
 import { MessageService } from 'primeng/api';
 import { AdminModule } from './admin/admin.module';
 import { DataTablesModule } from "angular-datatables";
+import { PatientModule } from './patient/patient.module';
+import { DoctorModule } from './doctor/doctor.module';
+import {ConfirmationService} from 'primeng/api';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
@@ -26,13 +30,16 @@ import { DataTablesModule } from "angular-datatables";
     ToastModule,
     SignupLoginModule,
     AdminModule,
+    DoctorModule,
+    PatientModule,
     ServicesModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    DataTablesModule
+    DataTablesModule,
+    ConfirmDialogModule
   ],
-  providers: [MessageService],
+  providers: [MessageService,ConfirmationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

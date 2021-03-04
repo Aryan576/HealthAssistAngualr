@@ -9,7 +9,8 @@ import { DoctorService } from 'src/app/services/doctor.service';
 export class DoctorComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   doctorlist : {}
-  constructor(private doctorService:DoctorService) { }
+
+  constructor(public doctorService:DoctorService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -20,5 +21,7 @@ export class DoctorComponent implements OnInit {
       this.doctorlist = res.data
     })
   }
-
+  delete(value){
+    // this.doctorService
+  }
 }

@@ -22,6 +22,7 @@
                 <th>LastName</th>
                 <th>Gender</th>
                 <th>Email</th>
+                <th>Status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -32,6 +33,21 @@
                 <td>{{ p.lastName }}</td>
                 <td>{{ p.gender }}</td>
                 <td>{{ p.email }}</td>
+                <td *ngIf="p.status" class="{{doctorService.doctorStatus[p.status]}}" >{{doctorService.doctorStatus[p.status]}} </td>
+                <a
+                class="dropdown-item"
+                [routerLink]="['/dashboard/edit-doctor', p.userId]"
+                ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
+                Edit</a
+              >
+              <a
+                class="dropdown-item"
+                (click)="delete(p.doctorId)"
+                data-toggle="modal"
+                data-target="#delete_patient"
+                ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
+                Delete</a
+              >
 
                 <td class="text-right">
                   <div class="dropdown dropdown-action">

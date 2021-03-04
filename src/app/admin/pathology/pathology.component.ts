@@ -21,4 +21,10 @@ export class PathologyComponent implements OnInit {
     })
   }
 
+  delete(value){
+    this.pathologyService.deletePathology(value).subscribe(res => {
+      console.log("Pathology deleted!!");
+
+    })
+  }
 }

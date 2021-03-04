@@ -8,5 +8,5 @@ export class UserdataService {
 
   constructor() { }
   user:SignupLogin={userId:0,email:"",password:"",firstName:"",lastName:"",gender:"",roleId:0,status:0,statusReason:"",otp:""}
-
+  
 }

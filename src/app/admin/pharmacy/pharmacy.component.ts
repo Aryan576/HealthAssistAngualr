@@ -21,4 +21,10 @@ export class PharmacyComponent implements OnInit {
     })
   }
 
+  delete(value){
+    this.pharmacyService.deletePharmacy(value).subscribe(res => {
+      console.log("Deleted!!");
+
+    })
+  }
 }

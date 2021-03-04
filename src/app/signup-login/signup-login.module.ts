@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SignupLoginRoutingModule } from './signup-login-routing.module';
-import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupLoginComponent } from './signup-login/signup-login.component';
@@ -10,7 +9,7 @@ import { OtpVerifyComponent } from './otp-verify/otp-verify.component';
 
 
 @NgModule({
-  declarations: [SignupComponent, SignupLoginComponent, ResetPasswordComponent, OtpVerifyComponent],
+  declarations: [SignupLoginComponent, ResetPasswordComponent, OtpVerifyComponent],
   imports: [
     CommonModule,
     SignupLoginRoutingModule,

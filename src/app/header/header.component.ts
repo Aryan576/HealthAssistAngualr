@@ -11,7 +11,7 @@ import { UserdataService } from '../services/userdata.service';
 })
 export class HeaderComponent implements OnInit {
   isLog: boolean = false;
-  constructor(public userData:UserdataService,private rout:Router,private messageService: MessageService) {}
+  constructor(public userData:UserdataService,private signupLoginService:SignupLoginService,private rout:Router,private messageService: MessageService) {}
 
   ngOnInit(): void {
     console.log(this.userData.user);
@@ -23,6 +23,10 @@ export class HeaderComponent implements OnInit {
       this.isLog = false
     }
   }
+
+  // get isLoggedIn() {
+    // return this.signupLoginService.isLoggedIn();
+  // }
 
   logout(){
     this.messageService.add({severity:'success', summary: 'Success', detail:'User Logout Successfully!!'});

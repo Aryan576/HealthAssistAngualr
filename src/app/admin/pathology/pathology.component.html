@@ -34,6 +34,21 @@
                 <td>{{ p.address}}</td>
                 <td>{{ p.phoneNo}}</td>
                 <td>{{ p.rating}}</td>
+                <a
+                        class="dropdown-item"
+                        [routerLink]="['/dashboard/edit-pathology', p.pathologyId]"
+                        ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
+                        Edit</a
+                      >
+                <a
+                class="dropdown-item"
+                (click)="delete(p.pathologyId)"
+                data-toggle="modal"
+                data-target="#delete_patient"
+                ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
+                Delete</a
+              >
+
                 <td class="text-right">
                   <div class="dropdown dropdown-action">
                     <a

@@ -13,15 +13,25 @@ import { AddEditDoctorComponent } from './doctor/add-edit-doctor/add-edit-doctor
 import { LayoutHeaderComponent } from './layout-header/layout-header.component';
 import { LayoutSidebarComponent } from './layout-sidebar/layout-sidebar.component';
 import { DataTablesModule } from "angular-datatables";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClinicComponent } from './clinic/clinic.component';
+import { AddEditClinicComponent } from './clinic/add-edit-clinic/add-edit-clinic.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent],
+  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MDBBootstrapModule.forRoot(),
-    DataTablesModule
-  ]
+    FormsModule,
+    ReactiveFormsModule,
+    DataTablesModule,
+    ConfirmDialogModule
+  ],
+  providers: [MessageService,ConfirmationService],
+
 })
 export class AdminModule { }
