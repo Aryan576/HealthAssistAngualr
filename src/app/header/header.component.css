@@ -20,7 +20,108 @@
 
 }
 
-.header-top {
+.navbar {
+  margin-bottom: 0;
+  /* background: #48bdc5; */
+  font-size: 19px;
+  background: #107eed; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107eed', endColorstr='#4e9ded',GradientType=1 );
+
+  border: none;
+  border-radius: 0;
+}
+
+@media (max-width: 991px) {
+  .navbar .navbar-nav {
+    padding: 15px 0;
+  }
+}
+
+.navbar .navbar-nav li > .nav-link {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 17px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 13px 18px !important;
+  transition: .3s;
+}
+
+@media (max-width: 991px) {
+  .navbar .navbar-nav li > .nav-link {
+    padding: 6px 18px !important;
+    text-align: center;
+  }
+}
+
+.navbar .navbar-nav li > .nav-link:hover {
+  color: #fff;
+  opacity: .7;
+}
+
+.navbar .navbar-nav li.active > a {
+  background: transparent;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.navbar .navbar-nav li.active > a:hover {
+  background: transparent;
+}
+
+.dropdown-toggle::after {
+  border: 0;
+  margin-left: 6px;
+  vertical-align: 1px;
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 11px;
+  width: auto;
+}
+
+@media (min-width: 1200px) {
+  .navbar .dropdown-menu {
+    display: block;
+    transition: 0.2s;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-radius: 0;
+    border: 0;
+    background-color: white;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .navbar .dropdown-menu .dropdown-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .navbar .dropdown:hover > .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 8px;
+  }
+}
+
+
+
+/* .header-top {
   background: #ffffff;
   border-bottom: 1px solid #ececec;
 }
@@ -138,4 +239,4 @@
 .header-uper .right-side .link-btn {
   margin-left: 20px;
   margin-top: 5px;
-}
+} */

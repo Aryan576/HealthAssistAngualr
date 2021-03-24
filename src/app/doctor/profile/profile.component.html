@@ -1,4 +1,4 @@
-<div class="">
+<div *ngIf="doctorData" class="">
   <div class="content">
       <div class="row">
           <div class="col-sm-7 col-6">
@@ -22,10 +22,10 @@
                           <div class="row">
                               <div class="col-md-5">
                                   <div class="profile-info-left">
-                                      <h3 class="user-name m-t-0 mb-0">{{firstName}} {{lastName}}</h3>
+                                      <h3 class="user-name m-t-0 mb-0">{{doctorData.firstName}} {{doctorData.lastName}}</h3>
                                       <small class="text-muted">Gynecologist</small>
                                       <div class="staff-id">Employee ID : DR-0001</div>
-                                      <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div>
+                                      <!-- <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Send Message</a></div> -->
                                   </div>
                               </div>
                               <div class="col-md-7">
@@ -36,7 +36,7 @@
                                       </li>
                                       <li>
                                           <span class="title">Email:</span>
-                                          <span class="text"><a href="#">{{email}}</a></span>
+                                          <span class="text"><a href="#">{{doctorData.email}}</a></span>
                                       </li>
                                       <li>
                                           <span class="title">Birthday:</span>
@@ -48,7 +48,7 @@
                                       </li>
                                       <li>
                                           <span class="title">Gender:</span>
-                                          <span class="text">{{gender}}</span>
+                                          <span class="text">{{doctorData.gender}}</span>
                                       </li>
                                   </ul>
                               </div>
@@ -61,8 +61,8 @@
 <div class="profile-tabs">
 <ul class="nav nav-tabs nav-tabs-bottom">
   <li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">About</a></li>
-  <li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Profile</a></li>
-  <li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Messages</a></li>
+  <!-- <li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Profile</a></li> -->
+  <!-- <li class="nav-item"><a class="nav-link" href="#bottom-tab3" data-toggle="tab">Messages</a></li> -->
 </ul>
 
 <div class="tab-content">
@@ -116,7 +116,8 @@
                               </div>
                           </li>
                           <li>
-                              <div class="experience-user">
+
+                            <div class="experience-user">
                                   <div class="before-circle"></div>
                               </div>
                               <div class="experience-content">

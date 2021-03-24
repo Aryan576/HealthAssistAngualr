@@ -1,0 +1,1109 @@
+<!-- <div class="content">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Patient Information</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="">
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          rounded="true"
+          data-toggle="modal"
+          data-target="#basicExample"
+          (click)="frame.show()"
+          mdbWavesEffect
+        >
+          Click Here
+        </button>
+      </div>
+      <div
+        mdbModal
+        #frame="mdbModal"
+        class="modal fade"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        (open)="onOpen($event)"
+      >
+        <div class="modal-dialog modal-notify modal-success" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #000">
+              <p class="heading lead">Patient Information</p>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frame.hide()"
+              >
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-info">
+                      <h5 class="user-name m-t-0 mb-0">Patient Name</h5>
+                      <h5 class="user-name m-t-0 mb-0">Age</h5>
+                      <h5 class="user-name m-t-0 mb-0">Gender</h5>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Appointment Information</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="">
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          rounded="true"
+          data-toggle="modal"
+          data-target="#basicExample"
+          (click)="frame1.show()"
+          mdbWavesEffect
+        >
+          Click Here
+        </button>
+      </div>
+      <div
+        mdbModal
+        #frame1="mdbModal"
+        class="modal fade"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        (open)="onOpen1($event)"
+      >
+        <div class="modal-dialog modal-notify modal-success" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #000">
+              Appointment Information
+              <p class="heading lead"></p>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frame1.hide()"
+              >
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-info">
+                      <h5 class="user-name m-t-0 mb-0">Appointment Date</h5>
+                      <h5 class="user-name m-t-0 mb-0">Appointment Time</h5>
+                      <h5 class="user-name m-t-0 mb-0">Comment</h5>
+                      <h5 class="user-name m-t-0 mb-0">Reference</h5>
+                      <h5 class="user-name m-t-0 mb-0">Complain</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          rounded="true"
+          data-toggle="modal"
+          data-target="#basicExample"
+          (click)="frame1.show()"
+          mdbWavesEffect
+        >
+          Past Appointment List
+        </button>
+      </div>
+      <div
+        mdbModal
+        #frame1="mdbModal"
+        class="modal fade"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        (open)="onOpen1($event)"
+      >
+        <div class="modal-dialog modal-notify modal-success" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #000">
+              Appointment Information
+              <p class="heading lead"></p>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frame1.hide()"
+              >
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-info">
+                      <h5 class="user-name m-t-0 mb-0">Appointment Date</h5>
+                      <h5 class="user-name m-t-0 mb-0">Appointment Time</h5>
+                      <h5 class="user-name m-t-0 mb-0">Comment</h5>
+                      <h5 class="user-name m-t-0 mb-0">Reference</h5>
+                      <h5 class="user-name m-t-0 mb-0">Complain</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Detected Diseases</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="">
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          rounded="true"
+          data-toggle="modal"
+          data-target="#basicExample"
+          (click)="frame1.show()"
+          mdbWavesEffect
+        >
+          Add Diseases
+        </button>
+      </div>
+      <div
+        mdbModal
+        #frame1="mdbModal"
+        class="modal fade"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        (open)="onOpen1($event)"
+      >
+        <div class="modal-dialog modal-notify modal-success" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #000">
+              Appointment Information
+              <p class="heading lead"></p>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frame1.hide()"
+              >
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-info">
+                      <h5 class="user-name m-t-0 mb-0">Appointment Date</h5>
+                      <h5 class="user-name m-t-0 mb-0">Appointment Time</h5>
+                      <h5 class="user-name m-t-0 mb-0">Comment</h5>
+                      <h5 class="user-name m-t-0 mb-0">Reference</h5>
+                      <h5 class="user-name m-t-0 mb-0">Complain</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          rounded="true"
+          data-toggle="modal"
+          data-target="#basicExample"
+          (click)="frame1.show()"
+          mdbWavesEffect
+        >
+          Past List Diseases
+        </button>
+      </div>
+      <div
+        mdbModal
+        #frame1="mdbModal"
+        class="modal fade"
+        id="frameModalTop"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="myModalLabel"
+        aria-hidden="true"
+        (open)="onOpen1($event)"
+      >
+        <div class="modal-dialog modal-notify modal-success" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background: #000">
+              Appointment Information
+              <p class="heading lead"></p>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                (click)="frame1.hide()"
+              >
+                <span aria-hidden="true" class="white-text">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="profile-basic">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-info">
+                      <h5 class="user-name m-t-0 mb-0">Appointment Date</h5>
+                      <h5 class="user-name m-t-0 mb-0">Appointment Time</h5>
+                      <h5 class="user-name m-t-0 mb-0">Comment</h5>
+                      <h5 class="user-name m-t-0 mb-0">Reference</h5>
+                      <h5 class="user-name m-t-0 mb-0">Complain</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Prescription</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Date</label>
+              <div class="cal-icon">
+                <input type="text" class="form-control datetimepicker" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea cols="30" rows="4" class="form-control"></textarea>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>General Advice</label>
+              <input class="form-control" type="email" />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Follow Up Comment</label>
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Medicine</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Medicine</label>
+              <select class="select">
+                <option>Select</option>
+                <option>Dentists</option>
+                <option>Neurology</option>
+                <option>Opthalmology</option>
+                <option>Orthopedics</option>
+                <option>Cancer Department</option>
+                <option>ENT Department</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Frequnecy</label>
+              <input class="form-control" type="email" />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Duration</label>
+              <input class="form-control" type="email" />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Instructions</label>
+              <input class="form-control" type="text" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="content mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title">Diet</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>Diet</label>
+              <select class="select">
+                <option>Select</option>
+                <option>Dentists</option>
+                <option>Neurology</option>
+                <option>Opthalmology</option>
+                <option>Orthopedics</option>
+                <option>Cancer Department</option>
+                <option>ENT Department</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-t-20 text-center">
+          <button class="btn btn-primary submit-btn">
+            Create Prescription
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="one" id="on"><h4>Patient Information</h4></div>
+
+    <div id="on1" class="card-box profile-header">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="profile-view">
+            <div class="profile-img-wrap">
+              <div class="profile-img">
+                <a href="#"
+                  ><img class="avatar" src="assets/img/doctor-03.jpg" alt=""
+                /></a>
+              </div>
+            </div>
+            <div class="profile-basic">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="profile-info-left">
+                    <h3 class="user-name m-t-0 mb-0">Cristina Groves</h3>
+                    <small class="text-muted">Gynecologist</small>
+                    <div class="staff-id">Employee ID : DR-0001</div>
+                    <div class="staff-msg">
+                      <a href="chat.html" class="btn btn-primary">Send Message</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <ul class="personal-info">
+                    <li>
+                      <span class="title">Phone:</span>
+                      <span class="text"><a href="#">770-889-6484</a></span>
+                    </li>
+                    <li>
+                      <span class="title">Email:</span>
+                      <span class="text"
+                        ><a href="#">cristinagroves@example.com</a></span
+                      >
+                    </li>
+                    <li>
+                      <span class="title">Birthday:</span>
+                      <span class="text">3rd March</span>
+                    </li>
+                    <li>
+                      <span class="title">Address:</span>
+                      <span class="text"
+                        >714 Burwell Heights Road, Bridge City, TX, 77611</span
+                      >
+                    </li>
+                    <li>
+                      <span class="title">Gender:</span>
+                      <span class="text">Female</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="one" id="tw"><h4>Click Me Here</h4></div>
+<div class="one1" id="tw1" style="display: none;"><p>Hi this is a Devesh dafoda<br />
+    New Bhavnagri Farshan Shop Ramnagar Sabaramati</p></div>
+
+<div class="one" id="th"><h4>Click Me Here</h4></div>
+<div class="one1" id="th1" style="display: none;"><p>Hi this is a Devesh dafoda<br />
+    New Bhavnagri Farshan Shop Ramnagar Sabaramati</p></div>
+
+ -->
+
+
+ <div class="page-wrapper">
+  <div class="content">
+      <div class="row">
+          <div class="col-sm-7 col-6">
+              <!-- <h4 class="page-title">My Profile</h4> -->
+          </div>
+
+      </div>
+
+      <!-- Patient Information -->
+
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+              <h4><b>Patient Information</b></h4>
+          </a></mdb-navbar-brand>
+
+
+          <links>
+
+
+              <div class="card-box profile-header">
+
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="profile-view">
+                              <div class="profile-img-wrap">
+                                  <div class="profile-img">
+                                      <a href="#"><img class="avatar" src="assets/img/doctor-03.jpg" alt=""></a>
+                                  </div>
+                              </div>
+                              <div class="profile-basic">
+
+                                  <div class="row">
+                                      <div class="col-md-5">
+                                          <div class="profile-info-left">
+                                              <h3 class="user-name m-t-0 mb-0">{{listAppointment[0].patientname}}</h3>
+                                              <div class="staff-id">Email ID : {{listAppointment[0].email}}</div>
+                                              <div class="staff-msg"><a href="chat.html">
+                                                  </a></div><br><br>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-7">
+                                          <ul class="personal-info">
+                                              <li>
+                                                  <span class="title">Phone:</span>
+                                                  <span class="text"><a href="#">{{listAppointment[0].phoneno}}</a></span>
+                                              </li>
+                                              <li>
+                                                  <span class="title">Age:</span>
+                                                  <span class="text">{{listAppointment[0].age}}</span>
+                                              </li>
+                                              <li>
+                                                  <span class="title">Gender:</span>
+                                                  <span class="text">{{listAppointment[0].gender}}</span>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+      <!-- Appointment Information -->
+
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+                  <h4><b>Appointment Information</b></h4>
+              </a></mdb-navbar-brand>
+
+
+          <links>
+
+              <div class="profile-tabs">
+                  <div class="tab-content">
+                      <div class="tab-pane show active" id="about-cont">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-box">
+                                      <!-- <h4 class="page-title"><b>Appointment Information</b></h4> -->
+                                      <div class="row">
+                                          <div class="col-md-5">
+                                              <div class="profile-info-left">
+                                                  <ul class="personal-info">
+                                                      <li>
+                                                          <span class="title">Create Date:</span>
+                                                          <span class="text"><a href="#">{{listAppointment[0].appcreatedate | date:'mediumDate'}}</a></span>
+                                                      </li>
+                                                      <li>
+                                                          <span class="title">Appointment Date:</span>
+                                                          <span class="text">{{listAppointment[0].appointmentdate | date:'mediumDate'}}</span>
+                                                      </li>
+                                                      <li>
+                                                          <span class="title">Timing:</span>
+                                                          <span class="text">{{listAppointment[0].appointmenttime}}</span>
+                                                      </li>
+                                                      <li>
+                                                          <span class="title">Clinic Name:</span>
+                                                          <span class="text">{{listAppointment[0].clinicname}}</span>
+                                                      </li>
+
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-7">
+                                              <ul class="personal-info">
+                                                  <li>
+                                                      <span class="title">Reference:</span>
+                                                      <span class="text">{{listAppointment[0].reference}}</span>
+                                                  </li>
+                                                  <li>
+                                                      <span class="title">Complain:</span>
+                                                      <span class="text">{{listAppointment[0].complain}}</span>
+                                                  </li>
+                                                  <!-- <li>
+                                                      <span class="title">Comment:</span>
+                                                      <span class="text">{{listAppointment[0].comment}}</span>
+                                                  </li> -->
+
+                                              </ul>
+                                          </div>
+                                      </div>
+
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+      <!-- Past Appointment List -->
+
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+                  <h4><b>Past Appointment List</b></h4>
+              </a></mdb-navbar-brand>
+
+
+          <links>
+
+
+              <div class="profile-tabs">
+                  <div class="tab-content">
+                      <div class="tab-pane show active" id="about-cont">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-box mb-0">
+                                      <!-- <h4 class="page-title"><b>Past Appointment List</b></h4> -->
+                                      <div class="experience-box">
+                                          <table datatable [dtOptions]="dtOptions" class="row-border hover">
+                                              <thead>
+                                                  <tr>
+                                                      <th>ID</th>
+                                                      <th>Patient</th>
+                                                      <th>AppCreateDate</th>
+                                                      <th>Comment</th>
+                                                      <th>Clinic</th>
+                                                      <th>Refrence</th>
+                                                      <th>AppointmentDate</th>
+                                                      <th>AppointmentTime</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <!-- <tr *ngFor="let a of listAppointment">
+                                                      <th scope="row">{{a.appointmentid}}</th>
+                                                      <td>{{a.patientname}}</td>
+                                                      <td>{{a.appcreatedate | date:'mediumDate'}}</td>
+                                                      <td>{{a.comment}}</td>
+                                                      <td>{{a.clinicname}}</td>
+                                                      <td>{{a.reference}}</td>
+                                                      <td>{{a.appointmentdate | date:'mediumDate'}}</td>
+                                                      <td>{{a.appointmenttime}}</td>
+                                                  </tr> -->
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+
+      <!-- Detected Disease -->
+
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+                  <h4><b>Detected Disease</b></h4>
+              </a></mdb-navbar-brand>
+
+
+          <links>
+
+
+              <div class="profile-tabs">
+                  <div class="tab-content">
+                      <div class="tab-pane show active" id="about-cont">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-box mb-0">
+                                      <!-- <h4 class="page-title"><b>Detected Disease</b></h4> -->
+                                      <div class="experience-box">
+                                          <div class="row">
+                                              <div class="col-sm-4 col-3">
+
+                                              </div>
+                                              <div class="col-sm-8 col-9 text-right m-b-20">
+                                                  <a pButton icon="pi pi-plus" label="Add" style="float: right;color: #fff;"
+                                                      data-toggle="modal" data-target="#myModal"></a>
+                                              </div>
+                                          </div>
+                                          <form [formGroup]="diseaseForm" *ngIf="diseaseForm"
+                                              (ngSubmit)="diseaseSubmit()">
+                                              <div id="myModal" class="modal fade" role="dialog">
+                                                  <div class="modal-dialog">
+
+                                                      <div class="modal-content">
+                                                          <div class="modal-header">
+                                                              <h4 class="modal-title"><b>Disease Form</b></h4>
+                                                          </div>
+                                                          <div class="modal-body">
+
+                                                              <div class="form-group">
+                                                                  <label>Disease Name</label>
+                                                                  <select class="browser-default custom-select mb-4"
+                                                                      formControlName="diseaseid">
+                                                                      <option value="" selected>Choose Disease
+                                                                      </option>
+                                                                      <option *ngFor="let d of listDisease"
+                                                                          value="{{d.diseaseid}}">
+                                                                          {{d.diseasename}}</option>
+                                                                  </select>
+                                                              </div>
+
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                              <button type="button" class="btn btn-danger"
+                                                                  data-toggle="modal" data-dismiss="modal"
+                                                                  data-target="#myModal">Close</button>
+                                                              <button type="submit" value="diseasesubmit"
+                                                                  class="btn btn-primary" data-toggle="modal"
+                                                                  data-target="#myModal">Save</button>
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                              </div>
+                                          </form>
+                                          <table *ngIf="listAppointmentDisease" datatable [dtOptions]="dtOptions"
+                                              class="row-border hover">
+                                              <thead>
+                                                  <tr>
+                                                      <th>ID</th>
+                                                      <th>Disease Name</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <tr *ngFor="let ad of listAppointmentDisease">
+                                                      <th scope="row">{{ad.appointmentdiseaseid}}</th>
+                                                      <td>{{ad.diseasename}}</td>
+                                                  </tr>
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+
+      <!-- Prescription Medicine -->
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+                  <h4><b>Prescription</b></h4>
+              </a></mdb-navbar-brand>
+
+
+          <links>
+
+
+              <div class="profile-tabs">
+                  <div class="tab-content">
+                      <div class="tab-pane show active" id="about-cont">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-box mb-0">
+                                      <!-- <h4 class="page-title"><b>Prescription Medicine</b></h4> -->
+                                      <div class="experience-box">
+
+                                          <form [formGroup]="prescriptionMedicineForm"
+                                              *ngIf="prescriptionMedicineForm" (ngSubmit)="submit()">
+
+                                              <div class="row" style="float: right;">
+
+
+                                                  <input class="form-control" type="date"
+                                                      formControlName="prescriptiondate">
+
+                                              </div><br> <br>
+                                              <div class="row">
+                                                  <div class="col-sm-12">
+                                                      <div class="form-group">
+                                                          <label>Description</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="description">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-sm-6">
+                                                      <div class="form-group">
+                                                          <label>General Advice</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="generaladvice">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-sm-6">
+                                                      <div class="form-group">
+                                                          <label>Followup Comment</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="followupcomment">
+                                                      </div>
+                                                  </div>
+
+                                                  <div class="col-sm-12">
+                                                      <button pButton type="button" icon="pi pi-plus" style="float: right;"></button>&nbsp;&nbsp;<br><br>
+                                                      <!-- <button pButton type="button" icon="pi pi-minus" style="float: right;"></button><br><br> -->
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Medicine Name</label>
+                                                          <select class="browser-default custom-select mb-4"
+                                                              formControlName="medicineid">
+                                                              <option value="" selected>Choose Medicine</option>
+                                                              <option *ngFor="let m of listMedicine"
+                                                                  value="{{m.medicineid}}">
+                                                                  {{m.medicinename}}</option>
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Frequnecy</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="frequency">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Duration</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="duration">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Instructions</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="instructions">
+                                                      </div>
+                                                  </div>
+
+
+
+
+
+
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Medicine Name</label>
+                                                          <select class="browser-default custom-select mb-4"
+                                                              formControlName="medicineid">
+                                                              <option value="" selected>Choose Medicine</option>
+                                                              <option *ngFor="let m of listMedicine"
+                                                                  value="{{m.medicineid}}">
+                                                                  {{m.medicinename}}</option>
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Frequnecy</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="frequency">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Duration</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="duration">
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-md-3">
+                                                      <div class="form-group">
+                                                          <label>Instructions</label>
+                                                          <input class="form-control" type="text"
+                                                              formControlName="instructions">
+                                                      </div>
+                                                  </div>
+
+
+                                              </div>
+                                              <div class="m-t-20 text-right">
+                                                  <button pButton type="submit" label="Submit" >
+                                                  </button>
+                                                  <!-- <button pButton type="submit" label="Submit" style="float: right;"></button> -->
+                                              </div>
+                                          </form>
+                                      </div>
+
+
+
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+      <!-- Diet User -->
+
+      <mdb-navbar SideClass="navbar navbar-1 navbar-light white lighten-2" [containerInside]="false">
+
+          <mdb-navbar-brand><a class="navbar-brand" href="#">
+                  <h4><b>Diet</b></h4>
+              </a></mdb-navbar-brand>
+
+
+          <links>
+
+
+              <div class="profile-tabs">
+                  <div class="tab-content">
+                      <div class="tab-pane show active" id="about-cont">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="card-box mb-0">
+
+                                      <div class="experience-box">
+                                          <div class="row">
+                                              <div class="col-sm-4 col-3">
+
+                                              </div>
+                                              <div class="col-sm-8 col-9 text-right m-b-20">
+                                                  <a pButton icon="pi pi-plus" label="Add" style="float: right;color: #fff;"
+                                                      data-toggle="modal" data-target="#dietUserModal"></a>
+
+                                              </div>
+                                          </div>
+                                          <form [formGroup]="dietUserForm" *ngIf="dietUserForm"
+                                              (ngSubmit)="dietUserSubmit()">
+                                              <div id="dietUserModal" class="modal fade" role="dialog">
+                                                  <div class="modal-dialog">
+
+                                                      <div class="modal-content">
+                                                          <div class="modal-header">
+                                                              <h4 class="modal-title"><b>Diet User</b></h4>
+                                                          </div>
+                                                          <div class="modal-body">
+
+                                                              <div class="form-group">
+                                                                  <label>Diet Type</label>
+                                                                  <select class="browser-default custom-select mb-4"
+                                                                      formControlName="dietid">
+                                                                      <option value="" selected>Choose Diet
+                                                                      </option>
+                                                                      <option *ngFor="let d of listDiet"
+                                                                          value="{{d.dietid}}">
+                                                                          {{d.diettype}}&nbsp; || &nbsp;{{d.agegroup}}</option>
+                                                                  </select>
+                                                              </div>
+
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                              <button type="button" class="btn btn-danger"
+                                                                  data-toggle="modal" data-dismiss="modal"
+                                                                  data-target="#dietUserModal">Close</button>
+                                                              <button type="submit" value="dietUserSubmit"
+                                                                  class="btn btn-primary" data-toggle="modal"
+                                                                  data-target="#dietUserModal">Save</button>
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                              </div>
+                                          </form>
+                                          <table datatable [dtOptions]="dtOptions"
+                                              class="row-border hover">
+                                              <thead>
+                                                  <tr>
+                                                      <th>ID</th>
+                                                      <th>Disease Type</th>
+                                                      <th>Age Group</th>
+                                                  </tr>
+                                              </thead>
+                                              <tbody>
+                                                  <!-- <tr *ngFor="let ad of listAppointmentDisease">
+                                                      <th scope="row">{{ad.appointmentdiseaseid}}</th>
+                                                      <td>{{ad.diseasename}}</td>
+                                                  </tr> -->
+                                              </tbody>
+                                          </table>
+                                      </div>
+                                  </div>
+
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+          </links>
+
+
+      </mdb-navbar>
+      <br><br>
+
+
+  </div>
+</div>
+

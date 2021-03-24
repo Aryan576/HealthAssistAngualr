@@ -1,0 +1,37 @@
+.container button{
+  background: #107eed; /* Old browsers */
+  background: -moz-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to right,
+    #107eed 1%,
+    #4e9ded 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107eed', endColorstr='#4e9ded',GradientType=1 );
+
+}
+
+
+
+.one{
+  width: 100%;
+  background-color: black;
+  padding: 6px;
+  color: white;
+  text-align: center;
+  border: 2px solid #f1f1f1;
+}
+
+.one1{
+  width: 100%;
+  background-color: yellow;
+  padding: 20px;
+}

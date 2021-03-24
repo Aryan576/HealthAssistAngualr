@@ -72,7 +72,7 @@ export class AddEditPharmacyComponent implements OnInit {
       if (this.pharmacyForm.valid) {
         this.pharmacyService.addPharmacy(this.pharmacyForm.value).subscribe(res => {
           // if (res.status != 200) {
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Added Pharmacy!!'});
             console.log(res.data);
             this.rout.navigateByUrl('dashboard/pharmacy');
           // }

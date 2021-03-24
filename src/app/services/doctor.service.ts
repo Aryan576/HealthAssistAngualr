@@ -28,5 +28,15 @@ export class DoctorService {
     return this.http.put(`${environment.base_URL}updateDoctor`,model);
   }
 
+  deleteDoctor(userId:any):Observable<any>{
+    return this.http.delete(`${environment.base_URL}deleteDoctor/${userId}`);
+  }
 
+  addDoctorClinic(model:any):Observable<any>{
+    return this.http.post(`${environment.base_URL}addDoctorClinic`,model);
+  }
+
+  listDoctorClinic(userId:any):Promise<any>{
+    return this.http.get(`${environment.base_URL}listDoctorClinic/${userId}`).toPromise();
+  }
 }

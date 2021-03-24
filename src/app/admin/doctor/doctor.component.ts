@@ -9,7 +9,7 @@ import { DoctorService } from 'src/app/services/doctor.service';
 export class DoctorComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   doctorlist : {}
-
+  
   constructor(public doctorService:DoctorService) { }
 
   ngOnInit(): void {
@@ -22,6 +22,9 @@ export class DoctorComponent implements OnInit {
     })
   }
   delete(value){
-    // this.doctorService
+    this.doctorService.deleteDoctor(value).subscribe(res => {
+      console.log("Doctor Deleted!!");
+
+    })
   }
 }

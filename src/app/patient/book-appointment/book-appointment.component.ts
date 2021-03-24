@@ -6,11 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-appointment.component.css']
 })
 export class BookAppointmentComponent implements OnInit {
+  listDoctorClinic:{}
+  currentDate = new Date();
 
   constructor() { }
 
   ngOnInit(): void {
 
   }
-  
+
 }

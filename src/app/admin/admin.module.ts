@@ -18,10 +18,23 @@ import { ClinicComponent } from './clinic/clinic.component';
 import { AddEditClinicComponent } from './clinic/add-edit-clinic/add-edit-clinic.component';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService, MessageService } from 'primeng/api';
+import { ProfileComponent } from './doctor/profile/profile.component';
+import { ToastModule } from 'primeng/toast';
+import { DietComponent } from './diet/diet.component';
+import { AddEditDietComponent } from './diet/add-edit-diet/add-edit-diet.component';
+import { MedicineComponent } from './medicine/medicine.component';
+import { DiseaseComponent } from './disease/disease.component';
+import { AddEditMedicineComponent } from './medicine/add-edit-medicine/add-edit-medicine.component';
+import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-disease.component';
+import { AddEditPatientComponent } from './patient/add-edit-patient/add-edit-patient.component';
+import { CityComponent } from './city/city.component';
+import { AddEditCityComponent } from './city/add-edit-city/add-edit-city.component';
+import { UsersComponent } from './users/users.component';
+import { AddEditUsersComponent } from './users/add-edit-users/add-edit-users.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent],
+  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent, ProfileComponent, DietComponent, AddEditDietComponent, MedicineComponent, DiseaseComponent, AddEditMedicineComponent, AddEditDiseaseComponent, AddEditPatientComponent, CityComponent, AddEditCityComponent, UsersComponent, AddEditUsersComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -29,7 +42,9 @@ import { ConfirmationService, MessageService } from 'primeng/api';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    ToastModule
+
   ],
   providers: [MessageService,ConfirmationService],
 

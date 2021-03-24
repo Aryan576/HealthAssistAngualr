@@ -16,6 +16,11 @@
               <span>Dashboard</span></a
             >
           </li>
+          <li >
+            <a [routerLink]="['/dashboard/users']"
+              ><mdb-icon fas icon="user-alt"></mdb-icon> <span>Users</span></a
+            >
+          </li>
           <li>
             <a routerLink="/dashboard/doctor"
               ><mdb-icon fas icon="user-md"></mdb-icon> <span>Doctors</span></a
@@ -43,7 +48,7 @@
           </li>
 
           <li>
-            <a href="/diet"
+            <a routerLink="/dashboard/diet"
               ><mdb-icon fas icon="utensils"></mdb-icon> <span>Diet</span></a
             >
           </li>
@@ -52,6 +57,24 @@
             <a routerLink="/dashboard/clinic">
               <mdb-icon fas icon="hospital"></mdb-icon>
               <span>Clinic</span></a
+            >
+          </li>
+          <li>
+            <a routerLink="/dashboard/disease">
+              <i class="fas fa-disease"></i>
+              <span>Disease</span></a
+            >
+          </li>
+          <li>
+            <a routerLink="/dashboard/medicine">
+              <mdb-icon fas icon="pills"></mdb-icon>
+              <span>Medicine</span></a
+            >
+          </li>
+          <li>
+            <a routerLink="/dashboard/city">
+              <mdb-icon fas icon="city"></mdb-icon>
+              <span>City</span></a
             >
           </li>
         </ul>

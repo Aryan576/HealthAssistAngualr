@@ -58,21 +58,30 @@ export class AddEditDoctorComponent implements OnInit {
   }
 
   submit() {
-    if (this.doctorForm.valid) {
-      this.doctorService.addDoctor(this.doctorForm.value).subscribe(res => {
-        // if (res.status != 200) {
-          this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
-          console.log(res.data);
-          this.rout.navigateByUrl('dashboard/doctor');
-        // }
-        // else{
-          // console.log(res);
-          // this.messageService.add({severity:'warn', summary: 'Warn', detail: 'You have already registered!!'});
-        // }
-      });
+    if(this.id){
+      this.doctorService.updateDoctor(this.doctorForm.value).subscribe(res =>{
+        this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
+        // console.log(res);
+        this.rout.navigateByUrl('dashboard/doctor');
+      })
     }
     else{
-      this.messageService.add({severity:'info', summary: 'Info', detail: 'Please Enter All Fields!!'});
+      if (this.doctorForm.valid) {
+        this.doctorService.addDoctor(this.doctorForm.value).subscribe(res => {
+          // if (res.status != 200) {
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
+            console.log(res.data);
+            this.rout.navigateByUrl('dashboard/doctor');
+          // }
+          // else{
+            // console.log(res);
+            // this.messageService.add({severity:'warn', summary: 'Warn', detail: 'You have already registered!!'});
+          // }
+        });
+      }
+      else{
+        this.messageService.add({severity:'info', summary: 'Info', detail: 'Please Enter All Fields!!'});
+      }
     }
   }
 }

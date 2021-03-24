@@ -34,7 +34,7 @@
                 <td>{{ p.address}}</td>
                 <td>{{ p.phoneNo}}</td>
                 <td>{{ p.rating}}</td>
-                <a
+                <!-- <a
                         class="dropdown-item"
                         [routerLink]="['/dashboard/edit-clinic', p.clinicId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
@@ -48,7 +48,7 @@
                         data-target="#delete_patient"
                         ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
                         Delete</a
-                      >
+                      > -->
                 <td class="text-right">
                   <div class="dropdown dropdown-action">
                     <a
@@ -61,13 +61,13 @@
                     <div class="dropdown-menu dropdown-menu-right">
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/admin/editdoctor', p.userid]"
+                        [routerLink]="['/dashboard/edit-clinic', p.clinicId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >
                       <a
                         class="dropdown-item"
-                        href="#"
+                        (click)="delete(p.clinicId)"
                         data-toggle="modal"
                         data-target="#delete_patient"
                         ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;

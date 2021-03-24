@@ -1,4 +1,4 @@
-<div class="page-wrapper">
+<!-- <div class="page-wrapper">
   <div class="content">
       <div class="row">
           <div class="col-lg-8 offset-lg-2">
@@ -320,5 +320,87 @@
           </div>
 
       </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h4 class="page-title" style="text-align: center; font-size: 30px">
+        <b> Book An Appoinment </b>
+      </h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <form>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Clinic</label>
+              <select class="browser-default custom-select mb-4">
+                <option value="" selected>Choose Clinic</option>
+                <option
+                  *ngFor="let dc of listDoctorClinic"
+                  value="{{ dc.docid }}"
+                >
+                  {{ dc.clinicname }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Create Date</label>
+              <input
+                class="form-control"
+                type="text"
+                value="{{ currentDate | date: 'dd-MM-yyyy' }}"
+              />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Appoinment Date</label>
+              <input class="form-control" type="date" />
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Appoinment Time</label>
+              <input class="form-control" type="time" />
+            </div>
+          </div>
+
+          <br /><br />
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Comment</label>
+                  <input type="text" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label>Reference</label>
+                  <input class="form-control" type="text" />
+                </div>
+
+                <div class="form-group">
+                  <label>Complain</label>
+                  <input type="text" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="m-t-20 text-center">
+          <button type="submit" class="btn btn-primary submit-btn">
+            Book Appointment
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

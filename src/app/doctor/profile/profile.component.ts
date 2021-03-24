@@ -10,25 +10,16 @@ import { UserdataService } from 'src/app/services/userdata.service';
 })
 export class ProfileComponent implements OnInit {
   doctorData :Doctor
-  doctorId = 0
-  firstName :String
-  lastName :String
-  gender: String
-  email: String
+
   constructor(public userdata: UserdataService,private doctorService:DoctorService) { }
 
   ngOnInit(): void {
     this.userdata.user.userId
-    console.log("user "+this.userdata.user.userId);
-    this.firstName = this.userdata.user.firstName
-    this.lastName = this.userdata.user.lastName
-    this.gender = this.userdata.user.gender
-    this.email = this.userdata.user.email
-
+    //console.log("user "+this.userdata.user.userId)
 
     this.doctorService.getDoctorById(this.userdata.user.userId).then(res => {
       this.doctorData = res.data
-      // console.log("Doc "+this.doctorData);
+      // console.log(this.doctorData.firstName);
       // console.log("Res "+res.data);
     })
   }

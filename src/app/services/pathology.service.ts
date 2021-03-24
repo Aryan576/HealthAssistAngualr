@@ -29,4 +29,13 @@ export class PathologyService {
   deletePathology(pathologyId:any):Observable<any>{
     return this.http.delete(`${environment.base_URL}deletePathology/${pathologyId}`);
   }
+
+  listAssignUserPathologyById():Promise<any> {
+    return this.http.get(`${environment.base_URL}listAssignUserPathology`).toPromise();
+  }
+
+  addUserPathology(model :any):Observable<any> {
+    return this.http.post(`${environment.base_URL}addUserPathology`,model);
+  }
+
 }

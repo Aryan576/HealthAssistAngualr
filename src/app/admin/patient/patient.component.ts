@@ -21,4 +21,7 @@ export class PatientComponent implements OnInit {
     })
   }
 
+  delete(value){
+    
+  }
 }

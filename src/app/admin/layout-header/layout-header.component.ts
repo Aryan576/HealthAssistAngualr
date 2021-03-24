@@ -14,6 +14,12 @@ export class LayoutHeaderComponent implements OnInit {
   constructor(private messageService: MessageService,public userData:UserdataService,private rout:Router) { }
 
   ngOnInit(): void {
+    if(this.userData.user.email.length != 0 && this.userData.user != null){
+      this.isLog = true
+    }
+    else{
+      this.isLog = false
+    }
   }
   logout(){
     this.messageService.add({severity:'success', summary: 'Success', detail:'User Logout Successfully!!'});

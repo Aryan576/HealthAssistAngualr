@@ -5,7 +5,7 @@
     <title>HealthAssist</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"> -->
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <script
@@ -38,6 +38,31 @@
     <script src="assets/js/app.js"></script>
 
     <script type="text/javascript">
+
+$(document).ready(function(){
+        $("#on").click(function(){
+          $("#on1").slideToggle(1000);
+          $("#tw1").slideUp(1000);
+          $("#th1").slideUp(1000);
+        });
+      });
+
+      $(document).ready(function(){
+        $("#tw").click(function(){
+          $("#tw1").slideToggle(1500);
+          $("#on1").slideUp(1500);
+          $("#th1").slideUp(1500);
+        });
+      });
+
+      $(document).ready(function(){
+        $("#th").click(function(){
+          $("#th1").slideToggle(1800);
+          $("#on1").slideUp(1800);
+          $("#tw1").slideUp(1800);
+        });
+      });
+
       const toggleForm = () => {
         const container = document.querySelector(".container");
         container.classList.toggle("active");

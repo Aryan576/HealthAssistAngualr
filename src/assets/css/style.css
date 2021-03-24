@@ -732,6 +732,19 @@ textarea.form-control {
 	font-weight: 500;
 	margin-left: 10px;
 }
+.logo1 {
+	align-items: center;
+	display: flex;
+	height: 50px;
+	justify-content: center;
+}
+.logo1 span {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: -180px;
+}
+
 .header .navbar-nav .badge {
 	position: absolute;
 	right: 7px;

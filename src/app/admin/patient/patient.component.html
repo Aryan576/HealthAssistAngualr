@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <div class="col-sm-8 col-9 text-right m-b-20">
       <a
-        [routerLink]="['../add-patient']"
+        [routerLink]="['/dashboard/add-patient']"
         class="btn btn-primary btn-rounded float-right"
         ><i class="fa fa-plus"></i> Add Patient
       </a>
@@ -24,7 +24,7 @@
                 <th>Email</th>
                 <th>Age</th>
                 <th>Profile Pic</th>
-                <th></th>
+
                 <th>Action</th>
               </tr>
             </thead>
@@ -49,13 +49,14 @@
                     <div class="dropdown-menu dropdown-menu-right">
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/admin/editdoctor', p.userid]"
+                        [routerLink]="['/dashboard/edit-patient', p.userId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >
                       <a
                         class="dropdown-item"
                         href="#"
+                        (click)="delete(p.patientId)"
                         data-toggle="modal"
                         data-target="#delete_patient"
                         ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;

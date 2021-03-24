@@ -14,9 +14,9 @@ export class HeaderComponent implements OnInit {
   constructor(public userData:UserdataService,private signupLoginService:SignupLoginService,private rout:Router,private messageService: MessageService) {}
 
   ngOnInit(): void {
-    console.log(this.userData.user);
+    // console.log(this.userData.user);
 
-    if(this.userData.user.email.length != 0){
+    if(this.userData.user.email.length != 0 && this.userData.user != null){
       this.isLog = true
     }
     else{

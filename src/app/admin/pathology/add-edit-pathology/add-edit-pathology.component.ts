@@ -71,15 +71,9 @@ export class AddEditPathologyComponent implements OnInit {
       })
     } else {
       if (this.pathologyForm.valid) {
-        this.pathologyService
-          .addPathology(this.pathologyForm.value)
-          .subscribe((res) => {
+        this.pathologyService.addPathology(this.pathologyForm.value).subscribe((res) => {
             // if (res.status != 200) {
-            this.messageService.add({
-              severity: 'success',
-              summary: 'Success',
-              detail: 'Successfully Signup!!',
-            });
+            this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Signup!!'});
             console.log(res.data);
             this.rout.navigateByUrl('dashboard/pathology');
             // }
@@ -89,11 +83,7 @@ export class AddEditPathologyComponent implements OnInit {
             // }
           });
       } else {
-        this.messageService.add({
-          severity: 'info',
-          summary: 'Info',
-          detail: 'Please Enter All Fields!!',
-        });
+        this.messageService.add({severity: 'info',summary: 'Info',detail: 'Please Enter All Fields!!'});
       }
     }
   }

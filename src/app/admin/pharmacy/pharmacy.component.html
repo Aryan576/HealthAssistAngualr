@@ -34,21 +34,6 @@
                 <td>{{ p.address}}</td>
                 <td>{{ p.phoneNo}}</td>
                 <td>{{ p.rating}}</td>
-                <a
-                class="dropdown-item"
-                [routerLink]="['/dashboard/edit-pharmacy', p.pharmacyId]"
-                ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
-                Edit</a
-              >
-              <a
-                class="dropdown-item"
-                (click)="delete(p.pharmacyId)"
-                data-toggle="modal"
-                data-target="#delete_patient"
-                ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
-                Delete</a
-              >
-
                 <td class="text-right">
                   <div class="dropdown dropdown-action">
                     <a
@@ -61,13 +46,22 @@
                     <div class="dropdown-menu dropdown-menu-right">
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/admin/editdoctor', p.userid]"
+                        styleClass="p-mr-2"
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        [routerLink]="['/dashboard/assign-user-pharmacy',p.pharmacyId]"
+                        ><mdb-icon fas icon="plus"></mdb-icon> &nbsp; Assign
+                        User</a
+                      >
+                      <a
+                        class="dropdown-item"
+                        [routerLink]="['/dashboard/edit-pharmacy', p.pharmacyId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >
                       <a
                         class="dropdown-item"
-                        href="#"
+                        (click)="delete(p.pharmacyId)"
                         data-toggle="modal"
                         data-target="#delete_patient"
                         ><mdb-icon fas icon="trash-alt"></mdb-icon> &nbsp;
@@ -84,3 +78,60 @@
     </div>
   </div>
 </div>
+
+<form
+[formGroup]="AssignUserPharmacyForm"
+*ngIf="AssignUserPharmacyForm"
+(ngSubmit)="submit()"
+>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <b>User Pharmacy</b>
+        </h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>User Name</label>
+          <select
+            class="browser-default custom-select mb-4"
+            formControlName="userId"
+          >
+            <option value="" selected>
+              Choose User
+            </option>
+            <option
+              *ngFor="let up of AssignUserPharmacy"
+              value="{{ up.userId }}"
+            >
+              {{ up.firstName }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-toggle="modal"
+          data-dismiss="modal"
+          data-target="#myModal"
+        >
+          Close
+        </button>
+        <button
+          type="submit"
+          value="submit"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#myModal"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

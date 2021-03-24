@@ -75,7 +75,7 @@ export class AddEditClinicComponent implements OnInit {
       if(this.clinicForm.valid){
         this.clinicService.addClinic(this.clinicForm.value).subscribe((res) => {
           // if (res.status != 200) {
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Added Clinic!!'});
             console.log(res.data);
             this.rout.navigateByUrl('dashboard/clinic');
           // }

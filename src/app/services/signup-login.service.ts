@@ -21,10 +21,6 @@ export class SignupLoginService {
     return this.http.post(`${environment.base_URL}login`,model);
   }
 
-  role():Promise<any>{
-    return this.http.get(`${environment.base_URL}listRole`).toPromise();
-  }
-
   resetPassword(model:any):Observable<any>{
     return this.http.get(`${environment.base_URL}resetPassword/`+model);
   }

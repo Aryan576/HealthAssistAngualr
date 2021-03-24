@@ -19,6 +19,9 @@ import { PatientModule } from './patient/patient.module';
 import { DoctorModule } from './doctor/doctor.module';
 import {ConfirmationService} from 'primeng/api';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { DatePipe } from '@angular/common';
+import { PharmacyModule } from './pharmacy/pharmacy.module';
+import { PathologyModule } from './pathology/pathology.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
@@ -32,6 +35,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     AdminModule,
     DoctorModule,
     PatientModule,
+    PharmacyModule,
+    PathologyModule,
     ServicesModule,
     HttpClientModule,
     FormsModule,
@@ -39,7 +44,7 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
     DataTablesModule,
     ConfirmDialogModule
   ],
-  providers: [MessageService,ConfirmationService],
+  providers: [MessageService,ConfirmationService,DatePipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

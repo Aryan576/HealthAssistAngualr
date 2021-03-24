@@ -24,10 +24,10 @@ export class SignupLoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.signupLoginService.role().then(res => {
-      this.list = res.data;
-      // console.log(this.list);
-    })
+    // this.signupLoginService.role().then(res => {
+    //   this.list = res.data;
+    //   // console.log(this.list);
+    //})
 
     this.loginForm = new FormGroup({
       email: new FormControl('',Validators.required),
@@ -54,29 +54,29 @@ export class SignupLoginComponent implements OnInit {
 
           if(res.data.roleId == 2){
             console.log("Admin");
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Admin Successfully!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
             this.rout.navigateByUrl('/dashboard')
           }
           else if(res.data.roleId == 3){
-            
             console.log("Doctor");
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Doctor Successfully!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
             this.rout.navigateByUrl('/doctor')
           }
           else if(res.data.roleId == 4){
             console.log("Patient");
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Patient Successfully!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail: 'Welcome '+res.data.firstName+'!!'});
             console.log(res.data);
-
+            this.rout.navigateByUrl('')
           }
           else if(res.data.roleId == 5){
             console.log("Pharmacy");
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Pharmacy Successfully!!'});
-
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
+            this.rout.navigateByUrl('/pharmacy-dashboard')
           }
           else if(res.data.roleId == 6){
             console.log("Pathology");
-            this.messageService.add({severity:'success', summary: 'Success', detail:'Pathology Successfully!!'});
+            this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
+            this.rout.navigateByUrl('/pathology-dashboard')
           }
         }
         else{
