@@ -9,6 +9,8 @@ import { PharmacyComponent } from './pharmacy/pharmacy.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DoctorprofileComponent } from './doctor/doctorprofile/doctorprofile.component';
 import { ProfileComponent } from './profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
 
 
 @NgModule({
@@ -16,6 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     CommonModule,
     PatientRoutingModule,
+    FormsModule,
+    DataTablesModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot()
   ]
 })

@@ -1,4 +1,6 @@
-<table *ngIf="listAppointment" datatable [dtOptions]="dtOptions" class="row-border hover">
+<input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+
+<table *ngIf="listAppointment" id="tblCustomers" datatable [dtOptions]="dtOptions" class="row-border hover">
   <thead>
     <tr>
       <th>ID</th>
@@ -49,7 +51,7 @@
             <a
               class="dropdown-item"
               styleClass="p-mr-2"
-              [routerLink]="['/prescription', a.appointmentid]"
+              [routerLink]="['/doctor/prescription', a.appointmentId]"
               ><mdb-icon fas icon="arrow-alt-circle-right"></mdb-icon> &nbsp;
               Proceed</a
             >

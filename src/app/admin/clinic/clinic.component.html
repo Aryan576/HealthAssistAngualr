@@ -14,7 +14,9 @@
     <div class="card-box">
       <div class="card-block">
         <div class="table-responsive">
-          <table *ngIf="clinicList" datatable [dtOptions]="dtOptions" class="row-border hover">
+          <input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+
+          <table *ngIf="clinicList" id="tblCustomers" datatable [dtOptions]="dtOptions" class="row-border hover">
             <thead>
               <tr>
                 <th>ID</th>
@@ -30,7 +32,7 @@
               <tr *ngFor="let p of clinicList">
                 <th scope="row">{{ p.clinicId }}</th>
                 <td>{{ p.clinicName }}</td>
-                <td>{{ p.clinicTimings}}</td>
+                <td>{{ p.clinicTiming}}</td>
                 <td>{{ p.address}}</td>
                 <td>{{ p.phoneNo}}</td>
                 <td>{{ p.rating}}</td>

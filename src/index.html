@@ -13,15 +13,37 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-datetimepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/fullcalendar.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css">
-
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.ico"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap-datetimepicker.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/fullcalendar.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css" />
   </head>
   <body>
     <app-root></app-root>
@@ -37,26 +59,46 @@
     <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
     <script src="assets/js/app.js"></script>
 
-    <script type="text/javascript">
 
-$(document).ready(function(){
-        $("#on").click(function(){
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+        $("body").on("click", "#btnExport", function () {
+            html2canvas($('#tblCustomers')[0], {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 500
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("report.pdf");
+                }
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#on").click(function () {
           $("#on1").slideToggle(1000);
           $("#tw1").slideUp(1000);
           $("#th1").slideUp(1000);
         });
       });
 
-      $(document).ready(function(){
-        $("#tw").click(function(){
+      $(document).ready(function () {
+        $("#tw").click(function () {
           $("#tw1").slideToggle(1500);
           $("#on1").slideUp(1500);
           $("#th1").slideUp(1500);
         });
       });
 
-      $(document).ready(function(){
-        $("#th").click(function(){
+      $(document).ready(function () {
+        $("#th").click(function () {
           $("#th1").slideToggle(1800);
           $("#on1").slideUp(1800);
           $("#tw1").slideUp(1800);

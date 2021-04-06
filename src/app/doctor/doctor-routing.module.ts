@@ -19,7 +19,7 @@ const routes: Routes = [
     {path:'appointment',component:AppointmentComponent},
     {path:'profile',component:ProfileComponent},
     {path:'edit-profile',component:EditProfileComponent},
-    {path:'prescription',component:PrescriptionComponent},
+    {path:'prescription/:appointmentId',component:PrescriptionComponent},
     {path:'doctor-medicine',component:MedicineComponent},
     {path:'doctor-add-medicine',component:AddEditMedicineComponent},
     {path:'doctor-edit-medicine/:medicineId',component:AddEditMedicineComponent},

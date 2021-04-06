@@ -14,10 +14,13 @@
         >
       </div>
     </div>
+    <input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+
     <!-- <p-progressBar [value]="value1" mode="indeterminate" *ngIf="value1!=100" [style]="{'height': '5px'}" ></p-progressBar> -->
     <table
       *ngIf="listUser"
       datatable
+      id="tblCustomers"
       [dtOptions]="dtOptions"
       class="row-border hover"
     >

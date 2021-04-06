@@ -38,7 +38,7 @@ export class PharmacyComponent implements OnInit {
       console.log('AssignUserPharmacy.... ', this.id);
 
       this.AssignUserPharmacyForm = new FormGroup({
-        pathologyId: new FormControl(this.pharmacyData.pharmacyId,Validators.required),
+        pharmacyId: new FormControl(this.pharmacyData.pharmacyId,Validators.required),
         userId: new FormControl('', Validators.required),
       });
     });

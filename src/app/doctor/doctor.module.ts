@@ -19,6 +19,7 @@ import { DietComponent } from './diet/diet.component';
 import { AddEditDietComponent } from './diet/add-edit-diet/add-edit-diet.component';
 import { DiseaseComponent } from './disease/disease.component';
 import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-disease.component';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -29,6 +30,7 @@ import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-dis
     DoctorRoutingModule,
     MDBBootstrapModule.forRoot(),
     DataTablesModule,
+    ButtonModule,
     FormsModule,
     ReactiveFormsModule
   ]

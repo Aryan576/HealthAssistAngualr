@@ -9,8 +9,8 @@ import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
-
-  {path:'book-appointment/:userId',component:BookAppointmentComponent},
+  
+  {path:'book-appointment',component:BookAppointmentComponent},
   {path:'doctor-list',component:DoctorComponent},
   {path:'doctor-profile/:userId',component:DoctorprofileComponent},
   {path:'pathology-list',component:PathologyComponent},

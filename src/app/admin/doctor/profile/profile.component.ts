@@ -52,7 +52,7 @@ export class ProfileComponent implements OnInit {
     this.doctorService.getDoctorById(this.id).then((res) => {
       this.getDoctorUserId = res.data;
       // console.log(res);
-      //console.log(this.getDoctorUserId);
+      // console.log("id"+this.getDoctorUserId.userId);
 
       this.doctorClinicForm = new FormGroup({
         doctorProfileId: new FormControl(this.getDoctorUserId.userId,Validators.required),

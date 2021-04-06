@@ -29,4 +29,12 @@ export class DiseaseService {
   deleteDisease(diseaseId:any):Observable<any>{
     return this.http.delete(`${environment.base_URL}deleteDisease/${diseaseId}`);
   }
+
+  addAppointmentDiseasePatient(model : any):Observable<any> {
+    return this.http.post(`${environment.base_URL}addAppointmentDiseasePatient`,model);
+  }
+
+  listAppointmentDiseasePatient(appointmentId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}listAppointmentDiseasePatient/${appointmentId}`).toPromise();
+  }
 }

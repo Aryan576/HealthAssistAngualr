@@ -60,7 +60,9 @@
                     </li>
                     <li>
                       <span class="title">Experience:</span>
-                      <span class="text">{{ getDoctorUserId.experience_in_year }}</span>
+                      <span class="text">{{
+                        getDoctorUserId.experience_in_year
+                      }}</span>
                     </li>
                   </ul>
                 </div>
@@ -114,7 +116,7 @@
 
                               <option
                                 *ngFor="let c of listClinic"
-                                value="{{c.clinicId}}"
+                                value="{{ c.clinicId }}"
                               >
                                 {{ c.clinicName }}
                               </option>
@@ -234,9 +236,20 @@
                   </form>
                 </div>
                 <div class="experience-box">
+                  <input
+                    type="button"
+                    mdbBtn
+                    color="primary"
+                    class="mb-3"
+                    rounded="true"
+                    id="btnExport"
+                    value="Export"
+                  />
+
                   <table
                     *ngIf="listDoctorClinic"
                     datatable
+                    id="tblCustomers"
                     [dtOptions]="dtOptions"
                     class="row-border hover"
                   >

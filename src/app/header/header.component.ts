@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
     // return this.signupLoginService.isLoggedIn();
   // }
 
+  
   logout(){
     this.messageService.add({severity:'success', summary: 'Success', detail:'User Logout Successfully!!'});
 

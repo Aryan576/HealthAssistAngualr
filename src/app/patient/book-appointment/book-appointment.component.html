@@ -323,6 +323,38 @@
   </div>
 </div> -->
 
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span
+            class="text-white"
+            style="
+              font-size: 20px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+          >
+            Book Your Seat</span
+          >
+          <h1
+            class="text-capitalize mb-5 text-lg"
+            style="
+              font-weight: 500;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+          >
+            Appoinment
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
@@ -333,42 +365,83 @@
   </div>
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
-      <form>
+      <form [formGroup]="appointmentForm" (ngSubmit)="submit()">
         <div class="row">
           <div class="col-sm-6">
             <div class="form-group">
-              <label>Clinic</label>
-              <select class="browser-default custom-select mb-4">
-                <option value="" selected>Choose Clinic</option>
-                <option
-                  *ngFor="let dc of listDoctorClinic"
-                  value="{{ dc.docid }}"
-                >
-                  {{ dc.clinicname }}
+              <label>Doctor</label>
+              <select
+                class="browser-default custom-select mb-4"
+                formControlName="doctorProfileId"
+                (change)="getClinicsByDoctId()"
+              >
+                <option value="" selected>Choose Doctor</option>
+                <option *ngFor="let d of listDoctor" value="{{ d.userId }}">
+                  {{ d.firstName }}&nbsp;{{ d.lastName }} &nbsp; || &nbsp;
+                  {{ d.specialization }}
                 </option>
               </select>
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label>Create Date</label>
+              <label>Clinic</label>
+              <select
+                class="browser-default custom-select mb-4"
+                formControlName="clinicId"
+              >
+                <option value="" selected>Choose Clinic</option>
+                <option *ngFor="let c of listClinic" value="{{ c.clinicId }}">
+                  {{ c.clinicName }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <!-- <div class="col-sm-6">
+            <div class="form-group">
+              <label>Appoinment Date</label>
               <input
                 class="form-control"
-                type="text"
-                value="{{ currentDate | date: 'dd-MM-yyyy' }}"
+                type="date"
+                formControlName="appointmentDate"
+              />
+            </div>
+          </div> -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label>Appoinment Time</label>
+              <input
+                class="form-control"
+                type="time"
+                formControlName="appointmentTime"
               />
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label>Appoinment Date</label>
-              <input class="form-control" type="date" />
+              <label>Reference</label>
+              <input
+                class="form-control"
+                type="text"
+                formControlName="reference"
+              />
             </div>
           </div>
           <div class="col-sm-6">
             <div class="form-group">
-              <label>Appoinment Time</label>
-              <input class="form-control" type="time" />
+              <label>Patient</label>
+              <select
+                class="browser-default custom-select mb-4"
+                formControlName="patientProfileId"
+              >
+                <option value="" selected>Choose Patient</option>
+                <option
+                  *ngFor="let up of listUserPatint"
+                  value="{{ up.patientProfileId }}"
+                >
+                  {{ up.patientName }}
+                </option>
+              </select>
             </div>
           </div>
 
@@ -378,17 +451,20 @@
               <div class="col-sm-12">
                 <div class="form-group">
                   <label>Comment</label>
-                  <input type="text" class="form-control" />
-                </div>
-
-                <div class="form-group">
-                  <label>Reference</label>
-                  <input class="form-control" type="text" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="comment"
+                  />
                 </div>
 
                 <div class="form-group">
                   <label>Complain</label>
-                  <input type="text" class="form-control" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="complain"
+                  />
                 </div>
               </div>
             </div>
@@ -404,3 +480,4 @@
     </div>
   </div>
 </div>
+<br /><br /><br /><br /><br />

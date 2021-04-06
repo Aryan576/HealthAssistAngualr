@@ -12,7 +12,7 @@ import { UserdataService } from 'src/app/services/userdata.service';
 export class AppointmentComponent implements OnInit {
   listAppointment: {};
   dtOptions: DataTables.Settings = {};
-  statusid = 0;
+  statusId = 0;
   Appointment: {};
 
   constructor(
@@ -37,7 +37,7 @@ export class AppointmentComponent implements OnInit {
 
   accept(value){
     console.log(value);
-    this.Appointment={"appointmentid":value,"statusid":this.statusid=1}
+    this.Appointment={"appointmentId":value,"appointmentStatusId":this.statusId=1}
       this.appointmentService.acceptRejectAppointment(this.Appointment).subscribe(res => {
       console.log("stauts accpet",res);
     })
@@ -45,7 +45,7 @@ export class AppointmentComponent implements OnInit {
   }
   reject(value){
     console.log(value);
-    this.Appointment={"appointmentid":value,"statusid":this.statusid=2}
+    this.Appointment={"appointmentId":value,"appointmentStatusId":this.statusId=2}
     this.appointmentService.acceptRejectAppointment(this.Appointment).subscribe(res => {
       console.log("stauts accpet",res);
     })

@@ -14,7 +14,9 @@
     <div class="card-box">
       <div class="card-block">
         <div class="table-responsive">
-          <table *ngIf="listPharmacy" datatable [dtOptions]="dtOptions" class="row-border hover">
+          <input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+
+          <table *ngIf="listPharmacy" id="tblCustomers" datatable [dtOptions]="dtOptions" class="row-border hover">
             <thead>
               <tr>
                 <th>ID</th>
