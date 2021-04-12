@@ -13,7 +13,11 @@ import { DoctorService } from 'src/app/services/doctor.service';
 export class AddEditDoctorComponent implements OnInit {
   doctorForm: FormGroup;
   doctorData:Doctor
+  type = "file";
+  files:any;
+  rawFiles:any;
   id=0
+  baseData:any;
   constructor(private doctorService: DoctorService,private messageService:MessageService,private rout:Router,private router:ActivatedRoute) {}
 
   ngOnInit(): void {
@@ -37,6 +41,7 @@ export class AddEditDoctorComponent implements OnInit {
         qualification: new FormControl(this.doctorData.qualification, Validators.required),
         about: new FormControl(this.doctorData.about, Validators.required),
         specialization: new FormControl(this.doctorData.specialization, Validators.required),
+        profile_pic:new FormControl(this.doctorData.profile_pic,Validators.required),
         experience_in_year: new FormControl(this.doctorData.experience_in_year, Validators.required),
         registrationNo: new FormControl(this.doctorData.registrationNo, Validators.required),
       });
@@ -53,12 +58,33 @@ export class AddEditDoctorComponent implements OnInit {
       about: new FormControl('', Validators.required),
       specialization: new FormControl('', Validators.required),
       experience_in_year: new FormControl('', Validators.required),
+      profile_pic:new FormControl(this.files[0].base64,Validators.required),
       registrationNo: new FormControl('', Validators.required),
     });
   }
 
+
+  onFileChanges(files:any)
+  {
+    this.baseData = this.files[0].base64
+    console.log("base : "+this.baseData);
+
+    // console.log("File changed by method : ",files);
+    // console.log("File Changed By Binding : ",this.files);
+    // console.log("Raw Files :: ",this.rawFiles);
+  }
+
+  test()
+  {
+    console.log("This Files :: ",this.files);
+  }
+
   submit() {
+    console.log(this.doctorForm.value);
+
     if(this.id){
+      console.log("form"+this.doctorForm.value);
+
       this.doctorService.updateDoctor(this.doctorForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         // console.log(res);

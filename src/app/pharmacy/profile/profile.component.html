@@ -1,0 +1,110 @@
+<div class="nav">
+  <input type="checkbox" id="nav-check" />
+  <div class="nav-header">
+    <div class="nav-title">
+      <a
+        [routerLink]="['/pharmacy-dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="/assets/images/logo.png" alt="" height="40px" width="95xp" />
+      </a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a
+      [routerLink]="['/pharmacy-profile']"
+      routerLinkActive="router-link-active"
+      >My Profile</a
+    >
+    <a>Add Pharmacy</a>
+    <!-- <a>LinkedIn</a> -->
+    <!-- <a>Codepen</a> -->
+    <!-- <a  class="nav-link waves-light"  routerLinkActive="router-link-active"  mdbWavesEffect>Logout<span class="sr-only">(current)</span></a> -->
+
+    <a
+      *ngIf="userDataService.user != null && userDataService.user.email.length != 0"
+      (click)="logout()"
+      [routerLink]="['']"
+      >Logout</a
+    >
+  </div>
+</div>
+
+<div class="container content mt-5" style="min-height: 754px">
+  <div class="content">
+    <div class="row">
+      <div class="col-sm-7 col-6">
+        <h4 class="page-title">My Profile</h4>
+      </div>
+    </div>
+    <div class="card-box profile-header" style="height: 200px">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="profile-view">
+            <div class="profile-img-wrap">
+              <div class="profile-img">
+                <a href="#"
+                  ><img class="avatar" src="assets/img/doctor-03.jpg" alt=""
+                /></a>
+              </div>
+            </div>
+            <div class="profile-basic">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="profile-info-left">
+                    <br />
+                    <h3 class="user-name m-t-0 mb-0">
+                      {{ pharmacyData.firstName }}
+                      {{ pharmacyData.lastName }}
+                    </h3>
+                    <!-- <small class="text-muted">specialization</small> -->
+                    <br />
+                    <div class="staff-id">
+                      <b> Gender : </b>{{ pharmacyData.gender }}
+                    </div>
+                    <!-- <div class="staff-msg"><a href="chat.html" class="btn btn-primary">Get Details</a></div> -->
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <ul class="personal-info">
+                    <li>
+                      <span class="title"></span>
+                      <span class="text"><a href="#"></a></span>
+                    </li>
+                    <li>
+                      <span class="title"></span>
+                      <span class="text"></span>
+                    </li>
+                    <li>
+                      <span class="title">Gender :</span>
+                      <span class="text"
+                        >{{ pharmacyData.gender }}</span
+                      >
+                    </li>
+                    <li>
+                      <span class="title">Email :</span>
+                      <span class="text"><a href="#"> {{ pharmacyData.email }}</a></span>
+                    </li>
+
+                    <li>
+                      <span class="title"></span>
+                      <span class="text"></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -30,12 +30,22 @@ export class PharmacyService {
     return this.http.delete(`${environment.base_URL}deletePharmacy/${pharmacyId}`);
   }
 
+
+  addAssignUserPharmacy(model :any):Observable<any> {
+    return this.http.post(`${environment.base_URL}addAssignUserPharmacy`,model);
+  }
+
   listAssignUserPharmacyById():Promise<any> {
     return this.http.get(`${environment.base_URL}listAssignUserPharmacy`).toPromise();
   }
 
   addUserPharmacy(model :any):Observable<any> {
     return this.http.post(`${environment.base_URL}addUserPharmacy`,model);
+  }
+
+  listUserPharmacy(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}listUserPharmacy/${userId}`).toPromise();
+    
   }
 
 }

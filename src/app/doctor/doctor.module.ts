@@ -9,7 +9,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { MedicineComponent } from './medicine/medicine.component';
@@ -20,6 +19,7 @@ import { AddEditDietComponent } from './diet/add-edit-diet/add-edit-diet.compone
 import { DiseaseComponent } from './disease/disease.component';
 import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-disease.component';
 import { ButtonModule } from 'primeng/button';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 
 
 

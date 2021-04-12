@@ -22,6 +22,8 @@ import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import { DatePipe } from '@angular/common';
 import { PharmacyModule } from './pharmacy/pharmacy.module';
 import { PathologyModule } from './pathology/pathology.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
@@ -42,7 +44,9 @@ import { PathologyModule } from './pathology/pathology.module';
     FormsModule,
     ReactiveFormsModule,
     DataTablesModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    NgxChartsModule,
+    AlifeFileToBase64Module
   ],
   providers: [MessageService,ConfirmationService,DatePipe],
   bootstrap: [AppComponent],

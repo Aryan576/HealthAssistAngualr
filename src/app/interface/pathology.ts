@@ -1,4 +1,6 @@
-export interface Pathology {
+import { Users } from "./users";
+
+export interface Pathology extends Users {
   pathologyId:number;
 	pathologyName:string;
 	pathologyTimings:string;
@@ -9,5 +11,6 @@ export interface Pathology {
 	lat:number;
 	log:number;
 	cityId:number;
+  cityName:String;
 	pincode:number;
 }

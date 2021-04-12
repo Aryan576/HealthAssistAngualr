@@ -1,7 +1,7 @@
 
   <div class="header">
     <div class="header-left">
-    <a href="index-2.html" class="logo">
+    <a [routerLink]="['']" routerLinkActive="router-link-active"  class="logo">
     <img src="assets/img/logo.png" width="35" height="35" alt=""> <span>Health Assist</span>
     </a>
     </div>
@@ -18,9 +18,9 @@
     <span>Admin</span>
     </a>
     <div class="dropdown-menu">
-    <a class="dropdown-item" href="profile.html">My Profile</a>
+    <a class="dropdown-item" [routerLink]="['/dashboard/admin-profile']" routerLinkActive="router-link-active" >My Profile</a>
     <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-    <a class="dropdown-item" href="settings.html">Settings</a>
+    <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
     <a class="dropdown-item" [routerLink]="['']">Logout</a>
     </div>
     </li>
@@ -29,9 +29,9 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
     class="fa fa-ellipsis-v"></i></a>
     <div class="dropdown-menu dropdown-menu-right">
-    <a class="dropdown-item" href="profile.html">My Profile</a>
+    <a class="dropdown-item" [routerLink]="['/dashboard/admin-profile']">My Profile</a>
     <a class="dropdown-item" href="edit-profile.html">Edit Profile</a>
-    <a class="dropdown-item" href="settings.html">Settings</a>
+    <!-- <a class="dropdown-item" href="settings.html">Settings</a> -->
     <a class="dropdown-item" [routerLink]="['']" routerLinkActive="router-link-active" >Logout</a>
     </div>
     </div>

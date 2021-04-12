@@ -31,10 +31,13 @@ import { CityComponent } from './city/city.component';
 import { AddEditCityComponent } from './city/add-edit-city/add-edit-city.component';
 import { UsersComponent } from './users/users.component';
 import { AddEditUsersComponent } from './users/add-edit-users/add-edit-users.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent, ProfileComponent, DietComponent, AddEditDietComponent, MedicineComponent, DiseaseComponent, AddEditMedicineComponent, AddEditDiseaseComponent, AddEditPatientComponent, CityComponent, AddEditCityComponent, UsersComponent, AddEditUsersComponent],
+  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent, ProfileComponent, DietComponent, AddEditDietComponent, MedicineComponent, DiseaseComponent, AddEditMedicineComponent, AddEditDiseaseComponent, AddEditPatientComponent, CityComponent, AddEditCityComponent, UsersComponent, AddEditUsersComponent, AdminProfileComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
@@ -43,7 +46,9 @@ import { AddEditUsersComponent } from './users/add-edit-users/add-edit-users.com
     ReactiveFormsModule,
     DataTablesModule,
     ConfirmDialogModule,
-    ToastModule
+    ToastModule,
+    NgxChartsModule,
+    AlifeFileToBase64Module
 
   ],
   providers: [MessageService,ConfirmationService],

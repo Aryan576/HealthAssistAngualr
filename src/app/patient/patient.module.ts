@@ -11,10 +11,13 @@ import { DoctorprofileComponent } from './doctor/doctorprofile/doctorprofile.com
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { ViewPrescriptionComponent } from './view-prescription/view-prescription.component';
+import { PharmacyAboutComponent } from './pharmacy/pharmacy-about/pharmacy-about.component';
+import { PathologyAboutComponent } from './pathology/pathology-about/pathology-about.component';
 
 
 @NgModule({
-  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent],
+  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent, ViewPrescriptionComponent, PharmacyAboutComponent, PathologyAboutComponent],
   imports: [
     CommonModule,
     PatientRoutingModule,

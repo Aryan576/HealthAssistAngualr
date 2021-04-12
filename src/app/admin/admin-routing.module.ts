@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../signup-login/auth.guard';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AddEditCityComponent } from './city/add-edit-city/add-edit-city.component';
 import { CityComponent } from './city/city.component';
 import { AddEditClinicComponent } from './clinic/add-edit-clinic/add-edit-clinic.component';
@@ -27,6 +28,7 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {path:'dashboard',component:DashboardComponent,children:[
+    {path:'admin-profile',component:AdminProfileComponent},
     {path:'users',component:UsersComponent},
     {path:'add-users',component:AddEditUsersComponent},
     {path:'edit-users/:userId',component:AddEditUsersComponent},

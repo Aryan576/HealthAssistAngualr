@@ -18,4 +18,8 @@ export class PrescriptionService {
     return this.http.post(`${environment.base_URL}addPrescriptionMedicine`,model);
   }
 
+  getPrescriptionById(prescriptionId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}getPrescriptionById/${prescriptionId}`).toPromise();
+  }
+
 }

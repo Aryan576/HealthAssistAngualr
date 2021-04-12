@@ -1,0 +1,305 @@
+<div class="nav">
+  <input type="checkbox" id="nav-check" />
+  <div class="nav-header">
+    <div class="nav-title">
+      <a
+        [routerLink]="['/pharmacy-dashboard']"
+        routerLinkActive="router-link-active"
+      >
+        <img src="/assets/images/logo.png" alt="" height="40px" width="95xp" />
+      </a>
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+
+  <div class="nav-links">
+    <a
+      [routerLink]="['/pharmacy-profile']"
+      routerLinkActive="router-link-active"
+      >My Profile</a
+    >
+    <a>Add Pharmacy</a>
+    <!-- <a>LinkedIn</a> -->
+    <!-- <a>Codepen</a> -->
+    <!-- <a  class="nav-link waves-light"  routerLinkActive="router-link-active"  mdbWavesEffect>Logout<span class="sr-only">(current)</span></a> -->
+
+    <a
+      *ngIf="userDataService.user != null && userDataService.user.email.length != 0"
+      (click)="logout()"
+      [routerLink]="['']"
+      >Logout</a
+    >
+  </div>
+</div>
+
+<section class="page-title bg-1">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block text-center">
+          <span
+            class="text-white"
+            style="
+              font-size: 20px;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+            >All Pharmacy</span
+          >
+          <h1
+            class="text-capitalize mb-5 text-lg"
+            style="
+              font-weight: 500;
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+                'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            "
+          >
+            Pharmacy Details
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <p
+    style="
+      color: #107eed;
+      text-align: center;
+      padding-top: 20px;
+      font-weight: 700;
+      font-size: 45px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+        'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    "
+  >
+    Pharmacy
+  </p>
+  <hr
+    style="
+      width: 5%;
+      border-top: 2px solid #107eed;
+      border-bottom: none;
+      text-align: center;
+    "
+  />
+
+  <div class="right" style="text-align: center">
+    <p>
+      It is easy to get a thousand prescriptions, but hard to get one single
+      remedy. Pharmacy who takes medicine and neglects diet wastes the skill of
+      his doctors. Always laugh when you can. It is cheap medicine.
+    </p>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary btn-rounded"
+    data-toggle="modal"
+    data-target="#myModal"
+  >
+    <i class="fa fa-plus"></i> Add Pharmacy
+  </button>
+
+  <div class="search" style="float: right">
+    <input type="text" class="searchTerm" placeholder="Search Pharmacy..." />
+    <button type="submit" class="searchButton">
+      <i class="fa fa-search"></i>
+    </button>
+  </div>
+  <br />
+</div>
+<br /><br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-9 text-right m-b-20"></div>
+  </div>
+  <div class="tab-pane show active" id="about-cont">
+    <form [formGroup]="pharmacyForm" *ngIf="pharmacyForm" (ngSubmit)="submit()">
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"><b>Pharmacy Form</b></h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Pharmacy Name</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      formControlName="pharmacyName"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Pharmacy Timings</label>
+                    <input
+                      class="form-control"
+                      type="text"
+                      formControlName="pharmacyTimings"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Phone No</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  formControlName="phoneNo"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>About</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="about"
+                />
+              </div>
+
+              <div class="form-group">
+                <label>Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="address"
+                />
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>City</label>
+                    <select
+                      class="browser-default custom-select mb-4"
+                      formControlName="cityId"
+                    >
+                      <option value="" selected>Choose City</option>
+                      <option
+                        *ngFor="let c of listcities"
+                        value="{{ c.cityId }}"
+                      >
+                        {{ c.cityName }}
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Pincode</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="pincode"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-toggle="modal"
+                data-dismiss="modal"
+                data-target="#editmyModal"
+              >
+                Close
+              </button>
+              <button
+                type="submit"
+                value="submit"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#editmyModal"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <mdb-card *ngFor="let up of listUserPharmacy">
+    <mdb-card-body>
+      <mdb-card-title>
+        <h4>{{ up.pharmacyName }}</h4>
+        <button
+          type="button"
+          mdbBtn
+          color="primary"
+          style="float: right; margin-top: -35px"
+          [routerLink]="['/edit-user-pharmacy', up.pharmacyId]"
+          data-toggle="modal"
+          data-target="#myModal"
+          mdbWavesEffect
+        >
+          <mdb-icon fas icon="edit"></mdb-icon>
+        </button>
+        <hr
+          style="
+            width: 8%;
+            border-top: 5px solid #107eed;
+            border-bottom: none;
+            margin-left: -3px;
+          "
+        />
+      </mdb-card-title>
+
+      <mdb-card-text>
+        <ul class="w-hours list-unstyled">
+          <li class="d-flex justify-content-between align-items-center">
+            <a href="#" style="font-size: larger; font-weight: 500">Rating</a>
+            <span style="font-size: medium">{{ up.rating }}</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-center">
+            <a href="#" style="font-size: larger; font-weight: 500"></a>
+            <span style="font-size: medium">
+              <p-rating [cancel]="false"></p-rating>
+            </span>
+          </li>
+          <br />
+          <li class="d-flex justify-content-between align-items-center">
+            <a href="#" style="font-size: larger; font-weight: 500">PhoneNo</a>
+            <span style="font-size: medium">{{ up.phoneNo }}</span>
+          </li>
+          <li class="d-flex justify-content-between align-items-center">
+            <a href="#" style="font-size: larger; font-weight: 500">Address</a>
+            <span style="font-size: medium">{{ up.address }}</span>
+          </li>
+        </ul>
+      </mdb-card-text>
+
+      <a [routerLink]="['/pharmacydetails', up.pharmacyid]"
+        ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+          Learn More
+        </button></a
+      >
+    </mdb-card-body>
+  </mdb-card>
+</div>
+
+
+<!-- <p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+>
+</p-confirmDialog> -->

@@ -59,7 +59,14 @@ export class PrescriptionComponent implements OnInit {
       userId:new FormControl('',Validators.required)
     })
 
-    this.prescriptionMedicineForm = new FormGroup({
+    this.id = this.route.snapshot.params.appointmentId;
+    // console.log("appid"+this.id);
+
+    this.appointmentService.getAppointmentById(this.id).then(res => {
+      this.prescriptionData = res.data;
+      console.log("App id : "+res.data);
+
+      this.prescriptionMedicineForm = new FormGroup({
       patientProfileId: new FormControl(this.prescriptionData.patientProfileId, Validators.required),
       doctorProfileId: new FormControl(this.prescriptionData.doctorProfileId, Validators.required),
       appointmentId: new FormControl(this.id, Validators.required),
@@ -74,12 +81,7 @@ export class PrescriptionComponent implements OnInit {
       instructions: new FormControl('', Validators.required)
     })
 
-    this.id = this.route.snapshot.params.appointmentId;
-    // console.log("appid"+this.id);
 
-    this.appointmentService.getAppointmentById(this.id).then(res => {
-      this.prescriptionData = res.data;
-      // console.log("App id : "+res.data);
 
       this.diseaseForm = new FormGroup({
         appointmentId:new FormControl(this.id,Validators.required),
@@ -117,6 +119,8 @@ export class PrescriptionComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.prescriptionMedicineForm.value);
+
     this.prescriptionService.addPrescriptioneMedicine(this.prescriptionMedicineForm.value).subscribe(res => {
       this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
     })
