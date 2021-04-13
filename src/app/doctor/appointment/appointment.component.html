@@ -1,6 +1,20 @@
-<input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+<input
+  type="button"
+  mdbBtn
+  color="primary"
+  class="mb-3"
+  rounded="true"
+  id="btnExport"
+  value="Export"
+/>
 
-<table *ngIf="listAppointment" id="tblCustomers" datatable [dtOptions]="dtOptions" class="row-border hover">
+<table
+  *ngIf="listAppointment"
+  id="tblCustomers"
+  datatable
+  [dtOptions]="dtOptions"
+  class="row-border hover"
+>
   <thead>
     <tr>
       <th>ID</th>
@@ -11,6 +25,7 @@
       <th>Refrence</th>
       <th>AppointmentDate</th>
       <th>AppointmentTime</th>
+      <th>Status</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -24,6 +39,11 @@
       <td>{{ a.reference }}</td>
       <td>{{ a.appointmentDate | date: "mediumDate" }}</td>
       <td>{{ a.appointmentTime }}</td>
+      <td *ngIf="a.appointmentStatusId">
+        <span class="{{ appointmentService.appointmentStatus[a.appointmentStatusId] }}">{{
+          appointmentService.appointmentStatus[a.appointmentStatusId]
+        }}</span>
+      </td>
       <td class="text-right">
         <div class="dropdown dropdown-action">
           <a

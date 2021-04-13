@@ -14,10 +14,11 @@ import { DataTablesModule } from 'angular-datatables';
 import { ViewPrescriptionComponent } from './view-prescription/view-prescription.component';
 import { PharmacyAboutComponent } from './pharmacy/pharmacy-about/pharmacy-about.component';
 import { PathologyAboutComponent } from './pathology/pathology-about/pathology-about.component';
+import { ViewAppointmentComponent } from './view-appointment/view-appointment.component';
 
 
 @NgModule({
-  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent, ViewPrescriptionComponent, PharmacyAboutComponent, PathologyAboutComponent],
+  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent, ViewPrescriptionComponent, PharmacyAboutComponent, PathologyAboutComponent, ViewAppointmentComponent],
   imports: [
     CommonModule,
     PatientRoutingModule,

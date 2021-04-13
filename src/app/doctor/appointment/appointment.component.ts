@@ -16,7 +16,7 @@ export class AppointmentComponent implements OnInit {
   Appointment: {};
 
   constructor(
-    private appointmentService: AppointmentService,
+    public appointmentService: AppointmentService,
     public userDataService: UserdataService,
     private rut: Router,
     private messageService: MessageService

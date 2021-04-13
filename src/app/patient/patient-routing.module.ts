@@ -9,6 +9,7 @@ import { PathologyComponent } from './pathology/pathology.component';
 import { PharmacyAboutComponent } from './pharmacy/pharmacy-about/pharmacy-about.component';
 import { PharmacyComponent } from './pharmacy/pharmacy.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ViewAppointmentComponent } from './view-appointment/view-appointment.component';
 import { ViewPrescriptionComponent } from './view-prescription/view-prescription.component';
 
 
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'pharmacy-list',component:PharmacyComponent,children:[
     {path:'pharmacy-about/:pharmacyId',component:PharmacyAboutComponent}
   ],canActivate:[AuthGuard]},
-  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]}
+  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'view-appointment',component:ViewAppointmentComponent}
 ];
 
 @NgModule({

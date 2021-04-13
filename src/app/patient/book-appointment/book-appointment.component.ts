@@ -25,6 +25,7 @@ export class BookAppointmentComponent implements OnInit {
   listUserPatint: {};
   a: string = '';
   listDoctorClinic: {};
+  listDoctorClinicTiming :{};
 
   constructor(
     private datePipe: DatePipe,
@@ -80,6 +81,15 @@ export class BookAppointmentComponent implements OnInit {
       this.messageService.add({severity: 'success', summary: 'Success', detail: "Appointment Booked Successfully...!!"});
     })
     console.log(this.appointmentForm.value);
+  }
+
+  getDoctorClinicsByDoctorId(){
+    var clinicId = this.appointmentForm.value.clinicId
+    console.log(this.appointmentForm.value.clinicId);
+    this.doctorClinicService.listDoctorClinicTiming(clinicId).then(res => {
+      this.listDoctorClinicTiming = res.data;
+      console.log("list app time"+res.data);
+    })
   }
 
   getClinicsByDoctId(){
