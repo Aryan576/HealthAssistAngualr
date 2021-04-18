@@ -34,7 +34,8 @@ export class DiseaseService {
     return this.http.post(`${environment.base_URL}addAppointmentDiseasePatient`,model);
   }
 
-  listAppointmentDiseasePatient(appointmentId :any):Promise<any> {
-    return this.http.get(`${environment.base_URL}listAppointmentDiseasePatient/${appointmentId}`).toPromise();
+  listAppointmentDiseasePatient(patientProfileId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}listAppointmentDiseasePatient/${patientProfileId}`).toPromise();
   }
+
 }

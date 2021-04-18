@@ -75,7 +75,7 @@
     </mdb-navbar>
 
     <!-- Appointment Information -->
-    <br><br>
+    <br /><br />
     <mdb-navbar
       SideClass="navbar navbar-1 navbar-light white lighten-2"
       [containerInside]="false"
@@ -182,33 +182,32 @@
                     <!-- <h4 class="page-title"><b>Past Appointment List</b></h4> -->
                     <div class="experience-box">
                       <table
+                        *ngIf="pastAppointmentList"
                         datatable
                         [dtOptions]="dtOptions"
                         class="row-border hover"
                       >
                         <thead>
                           <tr>
-                            <th>ID</th>
-                            <th>Patient</th>
-                            <th>AppCreateDate</th>
+                            <th>Patient Name</th>
+                            <th>Clinic Name</th>
                             <th>Comment</th>
-                            <th>Clinic</th>
                             <th>Refrence</th>
-                            <th>AppointmentDate</th>
-                            <th>AppointmentTime</th>
+                            <th>Appointment Date</th>
+                            <th>Appointment Time</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <!-- <tr *ngFor="let a of listAppointment">
-  <th scope="row">{{a.appointmentid}}</th>
-  <td>{{a.patientname}}</td>
-  <td>{{a.appcreatedate | date:'mediumDate'}}</td>
-  <td>{{a.comment}}</td>
-  <td>{{a.clinicname}}</td>
-  <td>{{a.reference}}</td>
-  <td>{{a.appointmentdate | date:'mediumDate'}}</td>
-  <td>{{a.appointmenttime}}</td>
-  </tr> -->
+                          <tr *ngFor="let pa of pastAppointmentList">
+                            <td>{{ pa.patientName }}</td>
+                            <td>{{ pa.clinicName }}</td>
+                            <td>{{ pa.comment }}</td>
+                            <td>{{ pa.reference }}</td>
+                            <td>
+                              {{ pa.appointmentDate | date: "mediumDate" }}
+                            </td>
+                            <td>{{ pa.appointmentTime }}</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -341,8 +340,6 @@
       </links>
     </mdb-navbar>
     <br /><br />
-
-
 
     <div class="profile-tabs">
       <div class="tab-content">
@@ -493,6 +490,136 @@
     </div>
 
     <br /><br />
+
+    <!-- Diet User -->
+
+    <mdb-navbar
+      SideClass="navbar navbar-1 navbar-light white lighten-2"
+      [containerInside]="false"
+    >
+      <mdb-navbar-brand
+        ><a class="navbar-brand" href="#">
+          <h4><b>Diet</b></h4>
+        </a></mdb-navbar-brand
+      >
+
+      <links>
+        <div class="profile-tabs">
+          <div class="tab-content">
+            <div class="tab-pane show active" id="about-cont">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-box mb-0">
+                    <div class="experience-box">
+                      <div class="row">
+                        <div class="col-sm-4 col-3"></div>
+                        <div class="col-sm-8 col-9 text-right m-b-20">
+                          <a
+                            pButton
+                            icon="pi pi-plus"
+                            label="Add"
+                            style="float: right; color: #fff"
+                            data-toggle="modal"
+                            data-target="#dietUserModal"
+                          ></a>
+                        </div>
+                      </div>
+                      <form
+                        [formGroup]="dietUserForm"
+                        *ngIf="dietUserForm"
+                        (ngSubmit)="dietUserSubmit()"
+                      >
+                        <div
+                          id="dietUserModal"
+                          class="modal fade"
+                          role="dialog"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title"><b>Diet User</b></h4>
+                              </div>
+                              <div class="modal-body">
+                                <div class="form-group">
+                                  <label>Diet Type</label>
+                                  <select
+                                    class="browser-default custom-select mb-4"
+                                    formControlName="dietId"
+                                  >
+                                    <option value="" selected>
+                                      Choose Diet
+                                    </option>
+                                    <option
+                                      *ngFor="let d of listDiet"
+                                      value="{{ d.dietId }}"
+                                    >
+                                      {{ d.dietType }}&nbsp; || &nbsp;{{
+                                        d.ageGroup
+                                      }}
+                                    </option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                  data-toggle="modal"
+                                  data-dismiss="modal"
+                                  data-target="#dietUserModal"
+                                >
+                                  Close
+                                </button>
+                                <button
+                                  type="submit"
+                                  value="dietUserSubmit"
+                                  class="btn btn-primary"
+                                  data-toggle="modal"
+                                  data-target="#dietUserModal"
+                                >
+                                  Save
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <table
+
+                        datatable
+                        [dtOptions]="dtOptions"
+                        class="row-border hover"
+                      >
+                        <thead>
+                          <tr>
+                            <th>Diet Type</th>
+                            <th>Age Group</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let du of listDietUser">
+                            <td>{{ du.dietType }}</td>
+                            <td>{{ du.ageGroup }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </links>
+    </mdb-navbar>
+    <br /><br /><br />
     <br /><br />
+
+<div class="m-t-20 text-right">
+  <!-- <button pButton type="submit" value="submit" label="Submit Details">
+  </button> -->
+  <button pButton type="submit" (click)="submitDetails(prescriptionData.appointmentId)"
+  label="Submit Details"></button>
+  </div>
   </div>
 </div>

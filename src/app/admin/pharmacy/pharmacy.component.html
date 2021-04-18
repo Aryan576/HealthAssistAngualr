@@ -51,13 +51,13 @@
                         styleClass="p-mr-2"
                         data-toggle="modal"
                         data-target="#myModal"
-                        [routerLink]="['/dashboard/assign-user-pharmacy',p.pharmacyId]"
+                        [routerLink]="['../assign-user-pharmacy',p.pharmacyId]"
                         ><mdb-icon fas icon="plus"></mdb-icon> &nbsp; Assign
                         User</a
                       >
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/dashboard/edit-pharmacy', p.pharmacyId]"
+                        [routerLink]="['../edit-pharmacy', p.pharmacyId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >

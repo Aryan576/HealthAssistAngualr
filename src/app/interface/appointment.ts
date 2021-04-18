@@ -20,4 +20,9 @@ export interface Appointment {
   phoneNo: String;
   gender: String;
   age: number;
+  followupComment: String;
+  description:String;
+  prescriptionDate:Date;
+  generalAdvice:String;
+
 }

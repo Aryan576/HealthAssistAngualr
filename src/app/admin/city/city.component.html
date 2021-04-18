@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <div class="col-sm-8 col-9 text-right m-b-20">
       <a
-        [routerLink]="['/dashboard/add-city']"
+        [routerLink]="['../add-city']"
         class="btn btn-primary btn-rounded float-right"
         ><i class="fa fa-plus"></i> Add City
       </a>
@@ -40,7 +40,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/dashboard/edit-city', p.cityId]"
+                        [routerLink]="['../edit-city', p.cityId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >

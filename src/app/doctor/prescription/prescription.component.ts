@@ -8,6 +8,7 @@ import { AppointmentService } from 'src/app/services/appointment.service';
 import { UserdataService } from 'src/app/services/userdata.service';
 import { DiseaseService } from 'src/app/services/disease.service';
 import { MedicineService } from 'src/app/services/medicine.service';
+import { DietService } from 'src/app/services/diet.service';
 
 @Component({
   selector: 'app-prescription',
@@ -17,6 +18,8 @@ import { MedicineService } from 'src/app/services/medicine.service';
 export class PrescriptionComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   id = 0;
+  appointmentStatusId = 0;
+
   PrescriptionData: {};
   prescriptionForm: FormGroup;
   prescriptionData: Appointment;
@@ -27,7 +30,10 @@ export class PrescriptionComponent implements OnInit {
   listAppointmentDisease: {};
   listAppointment: {};
   listDiet: {};
+  listDietUser:{};
+  pastAppointmentList:{}
   dietUserForm: FormGroup;
+  Appointment: {};
   public medicine: any[] = [{
     //id: 1,
     medicineName: '',
@@ -44,7 +50,8 @@ export class PrescriptionComponent implements OnInit {
     private diseaseService:DiseaseService,
     private medicineService:MedicineService,
     private rut: Router,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private dietService:DietService
   ) {}
 
   ngOnInit(): void {
@@ -54,10 +61,6 @@ export class PrescriptionComponent implements OnInit {
 
     // console.log("hh"+this.prescriptionData.patientName);
 
-    this.dietUserForm = new FormGroup({
-      dietId:new FormControl('',Validators.required),
-      userId:new FormControl('',Validators.required)
-    })
 
     this.id = this.route.snapshot.params.appointmentId;
     // console.log("appid"+this.id);
@@ -79,11 +82,26 @@ export class PrescriptionComponent implements OnInit {
       frequency: new FormControl('', Validators.required),
       duration: new FormControl('', Validators.required),
       instructions: new FormControl('', Validators.required)
+
+
     })
 
+    this.dietService.listDietUser(this.prescriptionData.patientProfileId).then(res => {
+      this.listDietUser = res.data;
+      console.log("diet : ",res.data);
 
+    })
 
-      this.diseaseForm = new FormGroup({
+    this.dietUserForm = new FormGroup({
+      dietId:new FormControl('',Validators.required),
+      userId:new FormControl(this.prescriptionData.patientProfileId,Validators.required)
+    })
+
+    this.appointmentService.pastAppointmentList(this.prescriptionData.patientProfileId).then(res => {
+      this.pastAppointmentList = res.data;
+    })
+
+    this.diseaseForm = new FormGroup({
         appointmentId:new FormControl(this.id,Validators.required),
         patientProfileId:new FormControl(this.prescriptionData.patientProfileId,Validators.required),
         diseaseId:new FormControl('',Validators.required)
@@ -102,6 +120,10 @@ export class PrescriptionComponent implements OnInit {
     this.medicineService.listMedicine().then(res => {
       this.listMedicine = res.data;
     })
+
+    this.dietService.listDiet().then(res => {
+      this.listDiet = res.data;
+    })
   }
 
   addMore() {
@@ -118,6 +140,7 @@ export class PrescriptionComponent implements OnInit {
     this.medicine.splice(i, 1);
   }
 
+
   submit() {
     console.log(this.prescriptionMedicineForm.value);
 
@@ -132,8 +155,20 @@ export class PrescriptionComponent implements OnInit {
       this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
     })
   }
-  dietUserSubmit(){
 
+  dietUserSubmit(){
+    this.dietService.addDietUser(this.dietUserForm.value).subscribe(res => {
+    this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
+    })
+  }
+
+  submitDetails(value){
+    console.log(value);
+    this.Appointment={"appointmentId":value,"appointmentStatusId":this.appointmentStatusId=6}
+    this.appointmentService.doneAppointment(this.Appointment).subscribe(res => {
+      this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
+    })
+    this.rut.navigateByUrl('appointment')
   }
 }
 

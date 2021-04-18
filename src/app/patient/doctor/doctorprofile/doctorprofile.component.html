@@ -111,7 +111,7 @@
           {{ getDoctorUserId.about }}
         </p>
 
-        <a [routerLink]="['/book-appointment', getDoctorUserId.userId]"
+        <a [routerLink]="['/doctor-appointment', getDoctorUserId.userId]"
           ><button
             ml-2
             mdbBtn
@@ -160,3 +160,85 @@
   </div>
 </div>
 <br /><br /><br /><br />
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let dc of listDoctClinic">
+      <div class="sidebar-widget gray-bg p-4">
+        <h5
+          class="mb-4"
+          style="
+            font-weight: 700;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+          "
+        >
+          {{ dc.clinicName }}
+        </h5>
+        <hr
+          style="
+            width: 15%;
+            border-top: 5px solid #107eed;
+            border-bottom: none;
+            margin-left: -3px;
+          "
+        />
+        <ul class="w-hours list-unstyled">
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 800"
+          >
+            <a href="#">Monday</a>
+            <span>{{ dc.monday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Tuesday</a>
+            <span>{{ dc.tuesday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Wednesday</a>
+            <span>{{ dc.wednesday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Thrusday</a>
+            <span>{{ dc.thrusday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Friday</a>
+            <span>{{ dc.friday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Saturday</a>
+            <span>{{ dc.saturday }}</span>
+          </li>
+          <li
+            class="d-flex justify-content-between align-items-center"
+            style="font-weight: 600"
+          >
+            <a href="#">Sunday</a>
+            <span>{{ dc.sunday }}</span>
+          </li>
+          <!-- <li class="d-flex justify-content-between align-items-center" style="font-weight: 600;">
+  <a href="#">Threshold</a>
+  <span>{{dc.threshold}}</span>
+  </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br /><br />

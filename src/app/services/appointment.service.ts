@@ -26,4 +26,16 @@ export class AppointmentService {
   getAppointmentById(appointmentId :any):Promise<any> {
     return this.http.get(`${environment.base_URL}getAppointmentId/${appointmentId}`).toPromise();
   }
+
+  pastAppointmentList(patientid : any):Promise <any> {
+    return this.http.get(`${environment.base_URL}pastAppointmentList/${patientid}`).toPromise();
+  }
+
+  doneAppointment(model :any):Observable<any> {
+    return this.http.put(`${environment.base_URL}doneAppointment`,model)
+  }
+
+  getPatientDetails(appointmentId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}getPatientDetails/${appointmentId}`).toPromise();
+  }
 }

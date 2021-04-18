@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../signup-login/auth.guard';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AddEditCityComponent } from './city/add-edit-city/add-edit-city.component';
 import { CityComponent } from './city/city.component';
@@ -27,7 +28,8 @@ import { UsersComponent } from './users/users.component';
 
 
 const routes: Routes = [
-  {path:'dashboard',component:DashboardComponent,children:[
+  {path:'admin',component:DashboardComponent,children:[
+    {path:'dashboard',component:AdminDashboardComponent},
     {path:'admin-profile',component:AdminProfileComponent},
     {path:'users',component:UsersComponent},
     {path:'add-users',component:AddEditUsersComponent},

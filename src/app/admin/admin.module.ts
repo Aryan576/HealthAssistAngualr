@@ -34,10 +34,11 @@ import { AddEditUsersComponent } from './users/add-edit-users/add-edit-users.com
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent, ProfileComponent, DietComponent, AddEditDietComponent, MedicineComponent, DiseaseComponent, AddEditMedicineComponent, AddEditDiseaseComponent, AddEditPatientComponent, CityComponent, AddEditCityComponent, UsersComponent, AddEditUsersComponent, AdminProfileComponent],
+  declarations: [DashboardComponent, DoctorComponent, PatientComponent, PathologyComponent, PharmacyComponent, AddEditPharmacyComponent, AddEditPathologyComponent, AddEditDoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, ClinicComponent, AddEditClinicComponent, ProfileComponent, DietComponent, AddEditDietComponent, MedicineComponent, DiseaseComponent, AddEditMedicineComponent, AddEditDiseaseComponent, AddEditPatientComponent, CityComponent, AddEditCityComponent, UsersComponent, AddEditUsersComponent, AdminProfileComponent, AdminDashboardComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

@@ -29,4 +29,12 @@ export class DietService {
   deleteDiet(dietId:any):Observable<any>{
     return this.http.delete(`${environment.base_URL}deleteDiet/${dietId}`);
   }
+
+  listDietUser(patientProfileId : any):Promise <any> {
+    return this.http.get(`${environment.base_URL}listUserDiet/${patientProfileId}`).toPromise();
+  }
+
+  addDietUser(model : any):Observable<any> {
+    return this.http.post(`${environment.base_URL}addUserDiet`,model);
+  }
 }

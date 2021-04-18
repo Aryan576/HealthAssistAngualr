@@ -15,5 +15,7 @@ export class DoctorClinicService {
 
   listDoctorClinicTiming(clinicId : any):Promise <any> {
     return this.http.get(`${environment.base_URL}listDoctorClinicTiming/${clinicId}`).toPromise();
-    }
+  }
+
+  
 }

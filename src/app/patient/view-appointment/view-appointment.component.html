@@ -1,1 +1,80 @@
-<p>view-appointment works!</p>
+<div class="tab-content">
+  <div class="tab-pane show active" id="about-cont">
+  </div>
+</div>
+
+<div class="container">
+  <!-- <p-button icon="pi pi-file-pdf" class="p-button-warning p-mr-2" id="btnExport" value="Export" pTooltip="PDF"
+  tooltipPosition="bottom"></p-button> -->
+  <a
+    pButton
+    icon="pi pi-plus"
+    label="Export"
+    style="float: right; color: #fff"
+    id="btnExport"
+    value="Export"
+  ></a>
+
+  <br /><br /><br />
+  <table
+    id="tblCustomers"
+    datatable
+    [dtOptions]="dtOptions"
+    class="row-border hover"
+  >
+    <thead>
+      <tr>
+        <!-- <th>ID</th> -->
+        <th>Appointment ID</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Clinic</th>
+        <th>AppointmentDate</th>
+        <th>AppointmentTime</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of listAppointment">
+        <td>{{ a.appointmentId}}</td>
+        <td>{{ a.patientName }}</td>
+        <td>{{ a.firstName }}&nbsp;{{ a.lastName }}</td>
+        <td>{{ a.clinicName }}</td>
+        <td>{{ a.appointmentDate | date: "mediumDate" }}</td>
+        <td>{{ a.appointmentTime }}</td>
+        <td *ngIf="a.appointmentStatusId">
+          <span
+            class="{{ apponintmentService.appointmentStatus[a.appointmentStatusId] }}"
+            >{{ apponintmentService.appointmentStatus[a.appointmentStatusId] }}</span
+          >
+        </td>
+        <td *ngIf="a.appointmentStatusId == 4">
+          Please Wait...
+        </td>
+        <td *ngIf="a.appointmentStatusId == 1">
+          Please Wait...
+        </td>
+        <td *ngIf="a.appointmentStatusId == 2">Take Appoinment</td>
+        <td class="text-right" *ngIf="a.appointmentStatusId != 4 && a.appointmentStatusId != 1">
+          <!-- <a class="dropdown-item" [routerLink]="['/viewprescription',a.appointmentid]" styleClass="p-mr-2"
+  *ngIf="a.statusid==6">
+  <p-button label="Prescription" icon="pi pi-eye"></p-button>
+  </a> -->
+          <button
+
+            class="size"
+            class="dropdown-item"
+            [routerLink]="['/view-prescription', a.appointmentId]"
+            class="p-button-outlined"
+            styleClass="p-button-sm"
+            *ngIf="a.appointmentStatusId == 6"
+            label="Prescription"
+            icon="pi pi-eye"
+          >Prescription</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

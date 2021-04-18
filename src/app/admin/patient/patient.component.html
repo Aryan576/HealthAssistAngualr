@@ -2,7 +2,7 @@
   <div class="col-sm-12">
     <div class="col-sm-8 col-9 text-right m-b-20">
       <a
-        [routerLink]="['/dashboard/add-patient']"
+        [routerLink]="['../add-patient']"
         class="btn btn-primary btn-rounded float-right"
         ><i class="fa fa-plus"></i> Add Patient
       </a>
@@ -52,7 +52,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                       <a
                         class="dropdown-item"
-                        [routerLink]="['/dashboard/edit-patient', p.userId]"
+                        [routerLink]="['../edit-patient', p.userId]"
                         ><mdb-icon fas icon="pencil-alt"></mdb-icon> &nbsp;
                         Edit</a
                       >
