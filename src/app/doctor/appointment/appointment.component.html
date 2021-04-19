@@ -40,9 +40,14 @@
       <td>{{ a.appointmentDate | date: "mediumDate" }}</td>
       <td>{{ a.appointmentTime }}</td>
       <td *ngIf="a.appointmentStatusId">
-        <span class="{{ appointmentService.appointmentStatus[a.appointmentStatusId] }}">{{
-          appointmentService.appointmentStatus[a.appointmentStatusId]
-        }}</span>
+        <span
+          class="{{
+            appointmentService.appointmentStatus[a.appointmentStatusId]
+          }}"
+          >{{
+            appointmentService.appointmentStatus[a.appointmentStatusId]
+          }}</span
+        >
       </td>
       <td class="text-right">
         <div class="dropdown dropdown-action">
@@ -65,6 +70,8 @@
               class="dropdown-item"
               styleClass="p-mr-2"
               data-toggle="modal"
+              data-target="#myReject"
+              [routerLink]="['../rejected/', a.appointmentId]"
               (click)="reject(a.appointmentId)"
               ><mdb-icon fas icon="times"></mdb-icon> &nbsp; Reject</a
             >
@@ -75,7 +82,13 @@
               ><mdb-icon fas icon="arrow-alt-circle-right"></mdb-icon> &nbsp;
               Proceed</a
             >
-            <a class="dropdown-item" styleClass="p-mr-2" data-toggle="modal"
+            <a
+              class="dropdown-item"
+              styleClass="p-mr-2"
+              data-toggle="modal"
+              data-target="#myModal"
+              [routerLink]="['../reschedule/', a.appointmentId]"
+              routerLinkActive="router-link-active"
               ><mdb-icon fas icon="sync"></mdb-icon> &nbsp; Reschedule</a
             >
           </div>
@@ -84,3 +97,98 @@
     </tr>
   </tbody>
 </table>
+<form [formGroup]="RescheduleForm" (ngSubmit)="submit()">
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><b>Reschedule Form</b></h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <br /><br />
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Reason For Reschedule</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="statusReason"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-toggle="modal"
+            data-dismiss="modal"
+            data-target="#myModal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            value="submit"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#myModal"
+            (click)="reject(appointmentData.appointmentId)"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<form [formGroup]="RejectForm" (ngSubmit)="rejectSubmit()">
+  <div id="myReject" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"><b>Reject Form</b></h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <br /><br />
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Reason For Reject</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="statusReason"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-toggle="modal"
+            data-dismiss="modal"
+            data-target="#myReject"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            value="submit"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#myReject"
+            (click)="reject(appointmentData.appointmentId)"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

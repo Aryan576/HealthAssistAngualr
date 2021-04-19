@@ -57,6 +57,8 @@ export class ViewPrescriptionComponent implements OnInit {
 
     this.prescriptionService.listPrescriptionMedicine(this.id).then(res => {
       this.listPrescriptionMedicine = res.data;
+      console.log("lis",this.listPrescriptionMedicine);
+
     })
   }
 }

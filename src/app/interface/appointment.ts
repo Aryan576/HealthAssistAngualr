@@ -24,5 +24,5 @@ export interface Appointment {
   description:String;
   prescriptionDate:Date;
   generalAdvice:String;
-
+  medicineName:String;
 }

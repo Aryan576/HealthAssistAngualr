@@ -38,4 +38,20 @@ export class AppointmentService {
   getPatientDetails(appointmentId :any):Promise<any> {
     return this.http.get(`${environment.base_URL}getPatientDetails/${appointmentId}`).toPromise();
   }
+
+  rescheduleReason(data : any):Observable<any> {
+    return this.http.get(`${environment.base_URL}rescheduleReason/`+data.email+"/"+data.appointmentid);
+  }
+
+  updateRescheduleAppointment(model :any):Observable<any> {
+    return this.http.put(`${environment.base_URL}updateRescheduleAppointment`,model);
+  }
+
+  rejectReason(data : any):Observable<any> {
+    return this.http.get(`${environment.base_URL}rejectReason/`+data.email+"/"+data.appointmentid);
+  }
+
+  updateRejectAppointment(model :any):Observable<any> {
+    return this.http.put(`${environment.base_URL}updateRejectAppointment`,model);
+  }
 }

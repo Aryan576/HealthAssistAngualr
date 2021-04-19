@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Pathology } from 'src/app/interface/pathology';
 import { PathologyService } from 'src/app/services/pathology.service';
 
@@ -27,7 +27,9 @@ export class PathologyComponent implements OnInit {
   constructor(
     private pathologyService: PathologyService,
     private route: ActivatedRoute,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+    private rout: Router
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +46,10 @@ export class PathologyComponent implements OnInit {
       console.log('AssignUserPathology.... ', this.id);
 
       this.AssignUserPathologyForm = new FormGroup({
-        pathologyId: new FormControl(this.PathologyData.pathologyId,Validators.required),
+        pathologyId: new FormControl(
+          this.PathologyData.pathologyId,
+          Validators.required
+        ),
         userId: new FormControl('', Validators.required),
       });
     });
@@ -55,21 +60,40 @@ export class PathologyComponent implements OnInit {
 
     this.pathologyService.listAssignUserPathologyById().then((res) => {
       this.AssignUserPathology = res.data;
-      console.log("D"+res.data);
-
+      console.log('D' + res.data);
     });
   }
 
   submit() {
-    this.pathologyService.addUserPathology(this.AssignUserPathologyForm.value).subscribe(res => {
-        this.messageService.add({severity: 'success',summary: 'Success',detail: res.msg});
+    this.pathologyService
+      .addUserPathology(this.AssignUserPathologyForm.value)
+      .subscribe((res) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: res.msg,
+        });
       });
     console.log(this.AssignUserPathologyForm.value);
   }
 
   delete(value) {
-    this.pathologyService.deletePathology(value).subscribe((res) => {
-      console.log('Pathology deleted!!');
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.pathologyService.deletePathology(value).subscribe((res) => {
+          console.log('Pathology deleted!!');
+        });
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+        });
+      },
     });
   }
 }

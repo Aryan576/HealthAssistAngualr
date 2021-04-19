@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { Pharmacy } from 'src/app/interface/pharmacy';
 import { PharmacyService } from 'src/app/services/pharmacy.service';
 
@@ -15,13 +15,15 @@ export class PharmacyComponent implements OnInit {
   listPharmacy: {};
   AssignUserPharmacy: {};
   AssignUserPharmacyForm: FormGroup;
-  id = 0
-  pharmacyData:Pharmacy
+  id = 0;
+  pharmacyData: Pharmacy;
 
   constructor(
     private pharmacyService: PharmacyService,
     private route: ActivatedRoute,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+    private rout: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,7 +40,10 @@ export class PharmacyComponent implements OnInit {
       console.log('AssignUserPharmacy.... ', this.id);
 
       this.AssignUserPharmacyForm = new FormGroup({
-        pharmacyId: new FormControl(this.pharmacyData.pharmacyId,Validators.required),
+        pharmacyId: new FormControl(
+          this.pharmacyData.pharmacyId,
+          Validators.required
+        ),
         userId: new FormControl('', Validators.required),
       });
     });
@@ -49,23 +54,40 @@ export class PharmacyComponent implements OnInit {
 
     this.pharmacyService.listAssignUserPharmacyById().then((res) => {
       this.AssignUserPharmacy = res.data;
-      console.log("D"+res.data);
-
+      console.log('D' + res.data);
     });
   }
 
   submit() {
-
-    this.pharmacyService.addUserPharmacy(this.AssignUserPharmacyForm.value).subscribe(res => {
-      this.messageService.add({severity: 'success',summary: 'Success',detail: res.msg});
-    });
+    this.pharmacyService
+      .addUserPharmacy(this.AssignUserPharmacyForm.value)
+      .subscribe((res) => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: res.msg,
+        });
+      });
     console.log(this.AssignUserPharmacyForm.value);
-
   }
 
   delete(value) {
-    this.pharmacyService.deletePharmacy(value).subscribe((res) => {
-      console.log('Deleted!!');
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.pharmacyService.deletePharmacy(value).subscribe((res) => {
+          console.log('Deleted!!');
+        });
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+        });
+      },
     });
   }
 }

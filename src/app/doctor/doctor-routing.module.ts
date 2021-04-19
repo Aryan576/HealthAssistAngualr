@@ -28,7 +28,9 @@ const routes: Routes = [
     {path:'doctor-edit-diet/:dietId',component:AddEditDietComponent},
     {path:'doctor-disease',component:DiseaseComponent},
     {path:'doctor-add-disease',component:AddEditDiseaseComponent},
-    {path:'doctor-edit-disease/:diseaseId',component:AddEditDiseaseComponent}
+    {path:'doctor-edit-disease/:diseaseId',component:AddEditDiseaseComponent},
+    {path:'reschedule/:appointmentId',component:AppointmentComponent},
+    {path:'rejected/:appointmentId',component:AppointmentComponent}
   ],canActivate:[AuthGuard]}
 ];
 

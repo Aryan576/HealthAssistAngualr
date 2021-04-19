@@ -55,7 +55,7 @@ export class SignupLoginComponent implements OnInit {
           if(res.data.roleId == 2){
             console.log("Admin");
             this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
-            this.rout.navigateByUrl('/dashboard')
+            this.rout.navigateByUrl('/admin/dashboard')
           }
           else if(res.data.roleId == 3){
             console.log("Doctor");

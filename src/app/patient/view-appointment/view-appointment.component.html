@@ -1,11 +1,9 @@
 <div class="tab-content">
-  <div class="tab-pane show active" id="about-cont">
-  </div>
+  <div class="tab-pane show active" id="about-cont"></div>
 </div>
 
-<div class="container">
-  <!-- <p-button icon="pi pi-file-pdf" class="p-button-warning p-mr-2" id="btnExport" value="Export" pTooltip="PDF"
-  tooltipPosition="bottom"></p-button> -->
+<!-- <div class="container">
+
   <a
     pButton
     icon="pi pi-plus"
@@ -24,7 +22,6 @@
   >
     <thead>
       <tr>
-        <!-- <th>ID</th> -->
         <th>Appointment ID</th>
         <th>Patient</th>
         <th>Doctor</th>
@@ -57,10 +54,7 @@
         </td>
         <td *ngIf="a.appointmentStatusId == 2">Take Appoinment</td>
         <td class="text-right" *ngIf="a.appointmentStatusId != 4 && a.appointmentStatusId != 1">
-          <!-- <a class="dropdown-item" [routerLink]="['/viewprescription',a.appointmentid]" styleClass="p-mr-2"
-  *ngIf="a.statusid==6">
-  <p-button label="Prescription" icon="pi pi-eye"></p-button>
-  </a> -->
+
           <button
 
             class="size"
@@ -71,10 +65,86 @@
             *ngIf="a.appointmentStatusId == 6"
             label="Prescription"
             icon="pi pi-eye"
-          >Prescription</button>
+          ><i class="fa fa-eye" aria-hidden="true"></i>
+        </button>
+
         </td>
       </tr>
     </tbody>
   </table>
+</div> -->
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let a of listAppointment">
+      <mdb-card cascade="true">
+        <mdb-card-body cascade="true" class="text-center pb-0 px-0">
+          <mdb-card-title class="">
+            <h4>Appointment Information</h4>
+          </mdb-card-title>
+
+          <hr
+            style="
+              width: 100%;
+              border-top: 5px solid #107eed;
+              border-bottom: none;
+            "
+          />
+          <h5>Patient Name : {{ a.patientName }}</h5>
+          <h5>Doctor Name : {{ a.firstName }}&nbsp;{{ a.lastName }}</h5>
+          <h5>Clinic Name : {{ a.clinicName }}</h5>
+          <h5>
+            Appointment Date : {{ a.appointmentDate | date: "mediumDate" }}
+          </h5>
+          <h5>Appointment Time : {{ a.appointmentTime }}</h5>
+          <h5 *ngIf="a.appointmentStatusId">
+            <span
+              class="{{
+                apponintmentService.appointmentStatus[a.appointmentStatusId]
+              }}"
+              >{{
+                apponintmentService.appointmentStatus[a.appointmentStatusId]
+              }}</span
+            >
+          </h5>
+          <h5 *ngIf="a.appointmentStatusId == 4">
+            <a class="waves-light" mdbWavesEffect disable
+              ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+                Please Wait...
+              </button></a
+            >
+          </h5>
+          <h5 *ngIf="a.appointmentStatusId == 1">
+            <a class="waves-light" mdbWavesEffect disable
+              ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+                Please Wait...
+              </button></a
+            >
+          </h5>
+          <h5 *ngIf="a.appointmentStatusId == 2">
+            <a class="waves-light" mdbWavesEffect disable
+              ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+                Take Appointment
+              </button></a
+            >
+          </h5>
+          <h5
+            class="mb-3"
+            *ngIf="a.appointmentStatusId != 4 && a.appointmentStatusId != 1"
+          >
+            <a
+              class="waves-light"
+              mdbWavesEffect
+              disable
+              [routerLink]="['/view-prescription', a.appointmentId]"
+              ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                View Prescription
+              </button></a
+            >
+          </h5>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
 </div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />

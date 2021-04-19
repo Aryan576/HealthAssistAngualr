@@ -8,9 +8,12 @@
     id="btnExport"
     value="Export"
   ></a>
-  <br /><br /><br />
-
-  <div class="col-md-12" id="tblCustomers">
+  <br /><br />
+  <div class="col-md-12 text-right mb-3">
+    <button class="btn btn-primary" id="download"><i class="fa fa-print fa-lg"></i> Print</button>
+  </div>
+  <br>
+  <div class="col-md-12" id="invoice" >
     <div class="card">
       <div class="card-body">
         <div class="row custom-invoice">
@@ -118,7 +121,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let pm of listPrescriptionMedicine">
-                <td>{{ pm.medicinename }}</td>
+                <td>{{ pm.medicineName }}</td>
                 <td>{{ pm.frequency }}</td>
                 <td>{{ pm.duration }}</td>
                 <td>{{ pm.instructions }}</td>
@@ -160,15 +163,15 @@
             <tbody>
               <tr *ngFor="let du of listDietUser">
                 <!-- <th scope="row">1</th> -->
-                <td>{{ du.diettype }}</td>
-                <td>{{ du.agegroup }}</td>
+                <td>{{ du.dietType }}</td>
+                <td>{{ du.ageGroup }}</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <br />
-       
+
 
         <div>
           <!-- <div class="row invoice-payment">
