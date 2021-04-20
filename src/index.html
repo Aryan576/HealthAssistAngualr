@@ -118,6 +118,14 @@
 
     <script type="text/javascript">
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
       $("body").on("click", "#btnExport", function () {
         html2canvas($("#tblCustomers")[0], {
           onrendered: function (canvas) {
