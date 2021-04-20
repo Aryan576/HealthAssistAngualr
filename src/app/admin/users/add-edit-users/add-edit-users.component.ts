@@ -65,18 +65,18 @@ export class AddEditUsersComponent implements OnInit {
       this.userService.updateUser(this.userForm.value).subscribe(res => {
         console.log(res);
         this.messageService.add({severity: 'success',summary: 'Success',detail: 'Updated Signup!!'});
-        this.rout.navigateByUrl('dashboard/users');
-        
+        this.rout.navigateByUrl('admin/users');
+
       })
     }
     else{
       if (this.userForm.valid) {
         this.userService.adminAddUsers(this.userForm.value).subscribe((res) => {
           console.log(res);
-          if (res.status != 200) {
+          if (res.status == 200) {
             this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Signup!!'});
             console.log(res.data);
-            this.rout.navigateByUrl('dashboard/users');
+            this.rout.navigateByUrl('admin/users');
           } else {
             console.log(res);
             this.messageService.add({severity:'warn', summary: 'Warn', detail: 'You have already registered!!'});

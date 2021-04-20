@@ -68,7 +68,7 @@ export class AddEditClinicComponent implements OnInit {
       this.clinicService.updateClinic(this.clinicForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         // console.log(res);
-        this.rout.navigateByUrl('dashboard/clinic');
+        this.rout.navigateByUrl('admin/clinic');
       })
     }
     else{
@@ -77,7 +77,7 @@ export class AddEditClinicComponent implements OnInit {
           // if (res.status != 200) {
             this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Added Clinic!!'});
             console.log(res.data);
-            this.rout.navigateByUrl('dashboard/clinic');
+            this.rout.navigateByUrl('admin/clinic');
           // }
           // else{
             // console.log(res);

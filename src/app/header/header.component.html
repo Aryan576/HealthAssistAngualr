@@ -336,7 +336,7 @@
   </div>
 </nav> -->
 
- <div class="head">
+<div class="head">
   <div class="logo">
     <a [routerLink]="['']"><img src="/assets/images/logo.png" alt="logo" /></a>
   </div>
@@ -355,12 +355,35 @@
       <li><a [routerLink]="['/doctor-list']">Doctors</a></li>
       <li><a [routerLink]="['/pathology-list']">Pathologies</a></li>
       <li><a [routerLink]="['/pharmacy-list']">Pharmacy</a></li>
-      <li><a [routerLink]="['/view-appointment']" >View Appointment</a></li>
-      <li><a [routerLink]="['/book-appointment']" >Book Appointment</a></li>
-      <li><a [routerLink]="['/profile']" >Profile</a></li>
-      <li><a [routerLink]="['/signup-login']">Login / Signup</a></li>
-
+      <li><a [routerLink]="['/view-appointment']">View Appointment</a></li>
+      <li><a [routerLink]="['/book-appointment']">Book Appointment</a></li>
+      <li><a [routerLink]="['/profile']">Profile</a></li>
+      <li>
+        <!-- <a *ngIf="userData.user == null || userData.user.email.length == 0" class="nav-link waves-light" [routerLink]="['/signup-login']" routerLinkActive="router-link-active"  mdbWavesEffect>Login / Signup<span class="sr-only">(current)</span></a> -->
+        <!-- <a *ngIf="userData.user != null && userData.user.email.length != 0" (click)="logout()" class="nav-link waves-light" [routerLink]="['']" routerLinkActive="router-link-active"  mdbWavesEffect>Logout<span class="sr-only">(current)</span></a> -->
+        <a
+          *ngIf="userData.user == null || userData.user.email.length == 0"
+          [routerLink]="['/signup-login']"
+          >Login / Signup</a
+        >
+        <a
+          *ngIf="userData.user != null && userData.user.email.length != 0"
+          (click)="logout()"
+          [routerLink]="['']"
+          >Logout</a
+        >
+      </li>
     </ul>
   </div>
 </div>
 
+<!-- <script type="text/javascript">
+  var navList = document.getElementById("nav-lists");
+  function Show() {
+    navList.classList.add("_Menus-show");
+  }
+
+  function Hide() {
+    navList.classList.remove("_Menus-show");
+  }
+</script> -->

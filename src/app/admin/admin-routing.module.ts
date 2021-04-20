@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '../signup-login/auth.guard';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 import { AddEditCityComponent } from './city/add-edit-city/add-edit-city.component';
 import { CityComponent } from './city/city.component';
 import { AddEditClinicComponent } from './clinic/add-edit-clinic/add-edit-clinic.component';
@@ -63,7 +64,8 @@ const routes: Routes = [
     {path:'edit-medicine/:medicineId',component:AddEditMedicineComponent},
     {path:'city',component:CityComponent},
     {path:'add-city',component:AddEditCityComponent},
-    {path:'edit-city/:cityId',component:AddEditCityComponent}
+    {path:'edit-city/:cityId',component:AddEditCityComponent},
+    {path:'list-appointment',component:AppointmentComponent}
   ],canActivate:[AuthGuard]},
 ];
 

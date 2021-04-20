@@ -1,4 +1,4 @@
-.KYC_DOCTOR {
+.Wait_For_Accept {
   background-color: #4dbfce;
   display: inline;
   padding: .2em .6em .3em;
@@ -14,7 +14,7 @@
   }
 
 
-  .PAUSE{
+  .Reschedule{
   background-color: gold;
   display: inline;
   padding: .2em .6em .3em;
@@ -27,7 +27,7 @@
   vertical-align: baseline;
   border-radius: .25em;
   }
-  .DISABLE{
+  .Reject{
   background-color: red;
   display: inline;
   padding: .2em .6em .3em;
@@ -40,7 +40,7 @@
   vertical-align: baseline;
   border-radius: .25em;
   }
-  .PENDING{
+  .Done{
 
   background-color: rgb(131, 207, 233);
   display: inline;
@@ -55,7 +55,7 @@
   border-radius: .25em;
 
   }
-  .ACTIVE{
+  .Accept{
 
   background-color: lightgreen;
   display: inline;

@@ -49,7 +49,7 @@ export class AddEditDietComponent implements OnInit {
       this.dietService.updateDiet(this.dietForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         console.log(res);
-        this.rout.navigateByUrl('dashboard/diet');
+        this.rout.navigateByUrl('admin/diet');
       })
     }
     else{
@@ -57,7 +57,7 @@ export class AddEditDietComponent implements OnInit {
         this.dietService.addDiet(this.dietForm.value).subscribe((res) => {
           this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Added Diet!!',});
           console.log(res);
-          this.rout.navigateByUrl('dashboard/diet');
+          this.rout.navigateByUrl('admin/diet');
         });
       }
       else{

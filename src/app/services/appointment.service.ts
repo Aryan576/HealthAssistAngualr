@@ -15,6 +15,11 @@ export class AppointmentService {
     return this.http.post(`${environment.base_URL}addAppointment`,model);
   }
 
+
+  listAllAppointment():Promise<any> {
+    return this.http.get(`${environment.base_URL}listAllAppointment`).toPromise();
+  }
+
   listAppointment(userId : any):Promise<any> {
     return this.http.get(`${environment.base_URL}listAppointment/${userId}`).toPromise()
   }
@@ -53,5 +58,29 @@ export class AppointmentService {
 
   updateRejectAppointment(model :any):Observable<any> {
     return this.http.put(`${environment.base_URL}updateRejectAppointment`,model);
+  }
+
+  todayAppointment(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}todayAppointment/${userId}`).toPromise();
+  }
+
+  waitForAcceptAppointment(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}waitForAcceptAppointment/${userId}`).toPromise();
+  }
+
+  acceptAppointment(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}acceptAppointment/${userId}`).toPromise();
+  }
+
+  rescheduleAppointment(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}rescheduleAppointment/${userId}`).toPromise();
+  }
+
+  doneAppointmentByUserId(userId : any):Promise<any> {
+    return this.http.get(`${environment.base_URL}doneAppointmentByUserId/${userId}`).toPromise();
+  }
+
+  listDoctClinic(userId : any):Promise <any> {
+    return this.http.get(`${environment.base_URL}listDoctClinic/${userId}`).toPromise();
   }
 }

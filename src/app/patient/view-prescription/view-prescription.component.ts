@@ -38,7 +38,7 @@ export class ViewPrescriptionComponent implements OnInit {
     this.id = this.route.snapshot.params.appointmentId;
     console.log("app :"+this.id);
 
-    this.appointmentService.getPatientDetails(1).then(res => {
+    this.appointmentService.getPatientDetails(this.id).then(res => {
       this.patientData = res.data;
       console.log(res.data);
 

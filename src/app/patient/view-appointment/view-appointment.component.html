@@ -123,7 +123,7 @@
           </h5>
           <h5 *ngIf="a.appointmentStatusId == 2">
             <a class="waves-light" mdbWavesEffect disable
-              ><button type="button" mdbBtn color="primary" mdbWavesEffect>
+              ><button type="button" mdbBtn color="primary" [routerLink]="['']" routerLinkActive="router-link-active"  mdbWavesEffect>
                 Take Appointment
               </button></a
             >

@@ -60,7 +60,7 @@ export class SignupLoginComponent implements OnInit {
           else if(res.data.roleId == 3){
             console.log("Doctor");
             this.messageService.add({severity:'success', summary: 'Success', detail:'Welcome '+res.data.firstName+'!!'});
-            this.rout.navigateByUrl('/doctor')
+            this.rout.navigateByUrl('/doctor/dashboard')
           }
           else if(res.data.roleId == 4){
             console.log("Patient");

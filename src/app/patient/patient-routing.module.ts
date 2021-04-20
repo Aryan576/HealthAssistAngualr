@@ -9,6 +9,7 @@ import { PathologyAboutComponent } from './pathology/pathology-about/pathology-a
 import { PathologyComponent } from './pathology/pathology.component';
 import { PharmacyAboutComponent } from './pharmacy/pharmacy-about/pharmacy-about.component';
 import { PharmacyComponent } from './pharmacy/pharmacy.component';
+import { EditprofileComponent } from './profile/editprofile/editprofile.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewAppointmentComponent } from './view-appointment/view-appointment.component';
 import { ViewPrescriptionComponent } from './view-prescription/view-prescription.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'pharmacy-list',component:PharmacyComponent,canActivate:[AuthGuard]},
   {path:'pharmacy-learn/:pharmacyId',component:PharmacyAboutComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'edit-patientprofile/:patientProfileId',component:EditprofileComponent,canActivate:[AuthGuard]},
   {path:'view-appointment',component:ViewAppointmentComponent,canActivate:[AuthGuard]}
 ];
 

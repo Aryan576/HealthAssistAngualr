@@ -67,7 +67,7 @@ export class AddEditPathologyComponent implements OnInit {
       this.pathologyService.updatePathology(this.pathologyForm.value).subscribe(res => {
         console.log(res);
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
-        this.rout.navigateByUrl('/dashboard/pathology')
+        this.rout.navigateByUrl('/admin/pathology')
       })
     } else {
       if (this.pathologyForm.valid) {
@@ -75,7 +75,7 @@ export class AddEditPathologyComponent implements OnInit {
             // if (res.status != 200) {
             this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Signup!!'});
             console.log(res.data);
-            this.rout.navigateByUrl('dashboard/pathology');
+            this.rout.navigateByUrl('admin/pathology');
             // }
             // else{
             // console.log(res);

@@ -618,7 +618,7 @@
 <div class="m-t-20 text-right">
   <!-- <button pButton type="submit" value="submit" label="Submit Details">
   </button> -->
-  <button pButton type="submit" (click)="submitDetails(prescriptionData.appointmentId)"
+  <button pButton type="submit" [routerLink]="['../appointment']" routerLinkActive="router-link-active"  (click)="submitDetails(prescriptionData.appointmentId)"
   label="Submit Details"></button>
   </div>
   </div>

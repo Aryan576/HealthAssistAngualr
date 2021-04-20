@@ -39,4 +39,8 @@ export class DoctorService {
   listDoctorClinic(userId:any):Promise<any>{
     return this.http.get(`${environment.base_URL}listDoctorClinic/${userId}`).toPromise();
   }
+
+  doneAppointmentForAllDoctor():Promise<any> {
+    return this.http.get(`${environment.base_URL}doneAppointmentForAllDoctor`).toPromise();
+  }
 }

@@ -42,7 +42,7 @@ export class AddEditDiseaseComponent implements OnInit {
       this.diseaseService.updateDisease(this.diseaseForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         console.log("Disease Updated");
-        this.rout.navigateByUrl('dashboard/disease');
+        this.rout.navigateByUrl('admin/disease');
       })
     }
     else{
@@ -50,7 +50,7 @@ export class AddEditDiseaseComponent implements OnInit {
         this.diseaseService.addDisease(this.diseaseForm.value).subscribe(res =>{
           this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Added disease!!',});
           console.log(res);
-          this.rout.navigateByUrl('dashboard/disease');
+          this.rout.navigateByUrl('admin/disease');
         })
       }
       else{

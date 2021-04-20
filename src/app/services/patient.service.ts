@@ -33,4 +33,8 @@ export class PatientService {
   getPatientById(userId :any):Promise<any> {
     return this.http.get(`${environment.base_URL}getPatientProfile/${userId}`).toPromise();
   }
+
+  getEditPatientById(patientProfileId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}getEditUserPatient/${patientProfileId}`).toPromise();
+  }
 }

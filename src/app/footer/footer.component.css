@@ -1,9 +1,30 @@
-footer {
-  /* background-color: black; */
-  background: #107eed; /* Old browsers */
-  background: -moz-linear-gradient(left,  #107eed 1%, #4e9ded 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left,  #107eed 1%,#4e9ded 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right,  #107eed 1%,#4e9ded 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+.main {
+  font-size: 19px;
+  background: #107eed;
+  background: -moz-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #107eed 1%,
+    #4e9ded 100%
+  );
+  background: linear-gradient(
+    to right,
+    #107eed 1%,
+    #4e9ded 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107eed', endColorstr='#4e9ded',GradientType=1 );
+
+}
+
+/* footer {
+  background: #107eed;
+  background: -moz-linear-gradient(left,  #107eed 1%, #4e9ded 100%);
+  background: -webkit-linear-gradient(left,  #107eed 1%,#4e9ded 100%);
+  background: linear-gradient(to right,  #107eed 1%,#4e9ded 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#107eed', endColorstr='#4e9ded',GradientType=1 );
 
   font-family: "Lato", sans-serif;
@@ -35,7 +56,6 @@ footer {
 
 .footer-button {
   color: white;
-  /* position: relative; */
   font-weight: 400;
   font-size: 16px;
   transition: 1s;
@@ -196,4 +216,4 @@ footer {
 .footer-inner:after {
   top: 730px;
 }
-}
+} */

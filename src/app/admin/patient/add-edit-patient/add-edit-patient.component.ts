@@ -46,7 +46,8 @@ export class AddEditPatientComponent implements OnInit {
   submit() {
     this.patientService.adminAddPatientProfile(this.patientForm.value).subscribe(res => {
       console.log(res);
-
+      this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
+      this.rout.navigateByUrl('/admin/patient')
     })
   }
 }

@@ -8,6 +8,51 @@
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"> -->
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9999;
+        overflow: hidden;
+        background: #107eed;
+      }
+
+      #preloader:before {
+        content: "";
+        position: fixed;
+        top: calc(50% - 30px);
+        left: calc(50% - 30px);
+        border: 6px solid #0563bb;
+        border-top-color: #000000;
+        border-bottom-color: #000000;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        -webkit-animation: animate-preloader 1s linear infinite;
+        animation: animate-preloader 1s linear infinite;
+      }
+
+      @-webkit-keyframes animate-preloader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes animate-preloader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
@@ -46,7 +91,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/select2.min.css" />
   </head>
   <body>
-    <app-root></app-root>
+    <app-root>
+      <div id="preloader"></div>
+    </app-root>
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -70,14 +117,7 @@
     ></script>
 
     <script type="text/javascript">
-      var navList = document.getElementById("nav-lists");
-      function Show() {
-        navList.classList.add("_Menus-show");
-      }
 
-      function Hide() {
-        navList.classList.remove("_Menus-show");
-      }
       $("body").on("click", "#btnExport", function () {
         html2canvas($("#tblCustomers")[0], {
           onrendered: function (canvas) {

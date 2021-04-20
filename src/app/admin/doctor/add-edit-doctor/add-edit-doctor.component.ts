@@ -41,7 +41,7 @@ export class AddEditDoctorComponent implements OnInit {
         qualification: new FormControl(this.doctorData.qualification, Validators.required),
         about: new FormControl(this.doctorData.about, Validators.required),
         specialization: new FormControl(this.doctorData.specialization, Validators.required),
-        profile_pic:new FormControl(this.doctorData.profile_pic,Validators.required),
+        // profile_pic:new FormControl(this.doctorData.profile_pic,Validators.required),
         experience_in_year: new FormControl(this.doctorData.experience_in_year, Validators.required),
         registrationNo: new FormControl(this.doctorData.registrationNo, Validators.required),
       });
@@ -58,7 +58,7 @@ export class AddEditDoctorComponent implements OnInit {
       about: new FormControl('', Validators.required),
       specialization: new FormControl('', Validators.required),
       experience_in_year: new FormControl('', Validators.required),
-      profile_pic:new FormControl(this.files[0].base64,Validators.required),
+      // profile_pic:new FormControl(this.files[0].base64,Validators.required),
       registrationNo: new FormControl('', Validators.required),
     });
   }
@@ -88,7 +88,7 @@ export class AddEditDoctorComponent implements OnInit {
       this.doctorService.updateDoctor(this.doctorForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         // console.log(res);
-        this.rout.navigateByUrl('dashboard/doctor');
+        this.rout.navigateByUrl('admin/doctor');
       })
     }
     else{
@@ -97,7 +97,7 @@ export class AddEditDoctorComponent implements OnInit {
           // if (res.status != 200) {
             this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
             console.log(res.data);
-            this.rout.navigateByUrl('dashboard/doctor');
+            this.rout.navigateByUrl('admin/doctor');
           // }
           // else{
             // console.log(res);

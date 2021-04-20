@@ -346,8 +346,8 @@
 }
 
 .head .navbar ul li a:hover {
-  color: #ffffff;
-  background-color: rgba(23, 23, 23, 0.9);
+  color: #000;
+  background-color: #fff ;
 }
 
 .head .navbar ul .close {
@@ -449,3 +449,4 @@
   margin: 0 auto;
   padding: 10px;
 } */
+

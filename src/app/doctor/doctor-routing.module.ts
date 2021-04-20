@@ -6,6 +6,7 @@ import { AddEditDietComponent } from './diet/add-edit-diet/add-edit-diet.compone
 import { DietComponent } from './diet/diet.component';
 import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-disease.component';
 import { DiseaseComponent } from './disease/disease.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { AddEditMedicineComponent } from './medicine/add-edit-medicine/add-edit-medicine.component';
 import { MedicineComponent } from './medicine/medicine.component';
@@ -16,6 +17,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'doctor',component:DoctorComponent,children:[
+    {path:'dashboard',component:DoctorDashboardComponent},
     {path:'appointment',component:AppointmentComponent},
     {path:'profile',component:ProfileComponent},
     {path:'edit-profile',component:EditProfileComponent},

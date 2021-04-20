@@ -65,7 +65,7 @@ export class AddEditPharmacyComponent implements OnInit {
     if(this.id){
       this.pharmacyService.updatePharmacy(this.pharmacyForm.value).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
-        this.rout.navigateByUrl('/dashboard/pharmacy')
+        this.rout.navigateByUrl('/admin/pharmacy')
       })
     }
     else{
@@ -74,7 +74,7 @@ export class AddEditPharmacyComponent implements OnInit {
           // if (res.status != 200) {
             this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Added Pharmacy!!'});
             console.log(res.data);
-            this.rout.navigateByUrl('dashboard/pharmacy');
+            this.rout.navigateByUrl('admin/pharmacy');
           // }
           // else{
             // console.log(res);

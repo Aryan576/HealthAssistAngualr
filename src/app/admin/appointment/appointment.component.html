@@ -1,0 +1,51 @@
+<div class="" style="min-height: 754px">
+  <div class="content">
+    <input type="button" mdbBtn color="primary" class="mb-3" rounded="true" id="btnExport" value="Export" />
+
+    <br /><br /><br />
+    <table
+      id="tblCustomers"
+      *ngIf="listAllAppointment"
+      datatable
+      [dtOptions]="dtOptions"
+      class="row-border hover"
+    >
+      <thead>
+        <tr>
+          <th>Patient</th>
+          <th>Doctor</th>
+          <th>Clinic</th>
+          <th>AppDate</th>
+          <th>AppTime</th>
+          <th>Status</th>
+          <th>Reason</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of listAllAppointment">
+          <td>{{ a.patientName }}</td>
+          <td>{{ a.firstName }}&nbsp;{{ a.lastName }}</td>
+          <td>{{ a.clinicName }}</td>
+          <td>{{ a.appointmentDate | date: "mediumDate" }}</td>
+          <td>{{ a.appointmentTime }}</td>
+          <td *ngIf="a.appointmentStatusId">
+            <span class="{{ appointmentService.appointmentStatus[a.appointmentStatusId] }}">{{
+              appointmentService.appointmentStatus[a.appointmentStatusId]
+            }}</span>
+          </td>
+          <td *ngIf="a.appointmentStatusId == 4">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting...
+          </td>
+
+          <td *ngIf="a.appointmentStatusId == 1">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Waiting...
+          </td>
+
+          <td *ngIf="a.appointmentStatusId == 6">&nbsp;&nbsp;&nbsp;&nbsp;Successful...</td>
+
+          <td *ngIf="a.appointmentStatusId == 2">&nbsp;{{ a.statusReason }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

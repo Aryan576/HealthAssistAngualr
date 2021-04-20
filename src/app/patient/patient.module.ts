@@ -16,10 +16,11 @@ import { PharmacyAboutComponent } from './pharmacy/pharmacy-about/pharmacy-about
 import { PathologyAboutComponent } from './pathology/pathology-about/pathology-about.component';
 import { ViewAppointmentComponent } from './view-appointment/view-appointment.component';
 import { DoctorAppointmentComponent } from './doctor-appointment/doctor-appointment.component';
+import { EditprofileComponent } from './profile/editprofile/editprofile.component';
 
 
 @NgModule({
-  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent, ViewPrescriptionComponent, PharmacyAboutComponent, PathologyAboutComponent, ViewAppointmentComponent, DoctorAppointmentComponent],
+  declarations: [BookAppointmentComponent, DoctorComponent, PathologyComponent, PharmacyComponent, DoctorprofileComponent, ProfileComponent, ViewPrescriptionComponent, PharmacyAboutComponent, PathologyAboutComponent, ViewAppointmentComponent, DoctorAppointmentComponent, EditprofileComponent],
   imports: [
     CommonModule,
     PatientRoutingModule,

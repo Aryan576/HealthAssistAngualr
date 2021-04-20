@@ -49,7 +49,7 @@ export class AddEditMedicineComponent implements OnInit {
       this.medicineService.updateMedicine(this.medicineForm.value).subscribe(res =>{
         console.log("Medicine Updated!!");
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
-        this.rout.navigateByUrl('dashboard/medicine');
+        this.rout.navigateByUrl('admin/medicine');
       })
     }
     else{
@@ -57,7 +57,7 @@ export class AddEditMedicineComponent implements OnInit {
         this.medicineService.addMedicine(this.medicineForm.value).subscribe(res => {
           this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Added disease!!',});
           console.log(res);
-          this.rout.navigateByUrl('dashboard/medicine');
+          this.rout.navigateByUrl('admin/medicine');
         })
       }
       else{

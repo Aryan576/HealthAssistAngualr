@@ -7,7 +7,6 @@ import { LayoutHeaderComponent } from './layout-header/layout-header.component';
 import { LayoutSidebarComponent } from './layout-sidebar/layout-sidebar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
@@ -20,11 +19,12 @@ import { DiseaseComponent } from './disease/disease.component';
 import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-disease.component';
 import { ButtonModule } from 'primeng/button';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 
 
 @NgModule({
-  declarations: [DoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, DashboardComponent, AppointmentComponent, EditProfileComponent, ProfileComponent, PrescriptionComponent, MedicineComponent, AddEditMedicineComponent, DietComponent, AddEditDietComponent, DiseaseComponent, AddEditDiseaseComponent],
+  declarations: [DoctorComponent, LayoutHeaderComponent, LayoutSidebarComponent, AppointmentComponent, EditProfileComponent, ProfileComponent, PrescriptionComponent, MedicineComponent, AddEditMedicineComponent, DietComponent, AddEditDietComponent, DiseaseComponent, AddEditDiseaseComponent, DoctorDashboardComponent],
   imports: [
     CommonModule,
     DoctorRoutingModule,

@@ -6,6 +6,14 @@
         <b>&nbsp;&nbsp;&nbsp;&nbsp;My Profile</b>
       </h4>
     </div>
+    <div class="col-sm-7 col-7 text-right m-b-20">
+      <a [routerLink]="['/edit-patientprofile', getpatientUserId.patientProfileId]">
+        <button type="button" style="float: right;"  class="btn btn-primary btn-rounded float-right">
+          Edit Profile
+        </button></a
+      >
+      <br /><br />
+    </div>
   </div>
   <div class="card-box profile-header">
     <div class="row">

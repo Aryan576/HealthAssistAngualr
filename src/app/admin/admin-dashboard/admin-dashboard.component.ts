@@ -19,6 +19,7 @@ export class AdminDashboardComponent implements OnInit {
   pathologyCount: number = 0;
   pharmacyCount: number = 0;
   clinicCount: number = 0;
+  doneAppointmentForAllDoctor:number=0;
   public single = [];
 
   constructor(
@@ -32,6 +33,11 @@ export class AdminDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.doctorService.doneAppointmentForAllDoctor().then(res => {
+      this.doneAppointmentForAllDoctor = res.data.length;
+    })
+
     this.doctorService.listDoctor().then((res) => {
       this.doctorCount = res.data.length;
     });
