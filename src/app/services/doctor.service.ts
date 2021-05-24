@@ -12,6 +12,13 @@ export class DoctorService {
 
   constructor(private http:HttpClient) { }
 
+  saveFile(file:File):Observable<any>{
+    let data = {"profile":file}
+    const formData = new FormData();
+    formData.append('profile',file);
+    return this.http.post(`${environment.base_URL}updateDoctor`,formData)
+  }
+
   listDoctor():Promise<any>{
     return this.http.get(`${environment.base_URL}listDoctor`).toPromise();
   }
@@ -24,8 +31,14 @@ export class DoctorService {
     return this.http.get(`${environment.base_URL}getDoctorById/${userId}`).toPromise();
   }
 
-  updateDoctor(model:any):Observable<any>{
-    return this.http.put(`${environment.base_URL}updateDoctor`,model);
+  updateDoctor(model:any,file:any):Observable<any>{
+
+    const formData = new FormData();
+    formData.append('profile',file);
+    //formData.append('data',model);
+    return this.http.post(`${environment.base_URL}updateDoctor`,formData)
+
+    // return this.http.post(`${environment.base_URL}updateDoctor`,model);
   }
 
   deleteDoctor(userId:any):Observable<any>{

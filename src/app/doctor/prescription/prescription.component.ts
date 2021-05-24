@@ -143,7 +143,8 @@ export class PrescriptionComponent implements OnInit {
 
   submit() {
     console.log(this.prescriptionMedicineForm.value);
-
+    console.log("med",this.medicine);
+    var data = {}
     this.prescriptionService.addPrescriptioneMedicine(this.prescriptionMedicineForm.value).subscribe(res => {
       this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
     })

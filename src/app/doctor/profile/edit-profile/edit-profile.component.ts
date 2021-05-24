@@ -46,7 +46,7 @@ export class EditProfileComponent implements OnInit {
 
   submit(){
     if(this.userDataService.user.userId){
-        this.doctorService.updateDoctor(this.editProfileForm.value).subscribe(res => {
+        this.doctorService.updateDoctor(this.editProfileForm.value,"").subscribe(res => {
         this.messageService.add({severity: 'success', summary: 'Success', detail: "Profile Updated...!!"});
       })
       this.rut.navigateByUrl('/doctor/profile')

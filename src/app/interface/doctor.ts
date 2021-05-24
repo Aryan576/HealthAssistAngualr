@@ -9,7 +9,7 @@ export interface Doctor {
   qualification: String;
   specialization: String;
   experience_in_year: number;
-  profile_pic: string;
+  profile_pic: FileList;
   about: String;
   registrationNo: String;
 }

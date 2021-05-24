@@ -7,8 +7,17 @@
       </h4>
     </div>
     <div class="col-sm-7 col-7 text-right m-b-20">
-      <a [routerLink]="['/edit-patientprofile', getpatientUserId.patientProfileId]">
-        <button type="button" style="float: right;"  class="btn btn-primary btn-rounded float-right">
+      <a
+        [routerLink]="[
+          '/edit-patientprofile',
+          getpatientUserId.patientProfileId
+        ]"
+      >
+        <button
+          type="button"
+          style="float: right"
+          class="btn btn-primary btn-rounded float-right"
+        >
           Edit Profile
         </button></a
       >
@@ -36,9 +45,9 @@
                       userDataService.user.lastName
                     }}
                   </h3>
-                  <small class="text-muted" style="font-size: 15px">{{
-                    userDataService.user.gender
-                  }}</small>
+                  <small class="text-muted" style="font-size: 15px">
+                    Gender : {{ userDataService.user.gender }}</small
+                  >
                   <br />
                   <div class="staff-id">
                     <b> Email : </b>{{ userDataService.user.email }}
@@ -103,7 +112,11 @@
                                 <p>Gender :</p>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <div
-                                  class="custom-control custom-radio custom-control-inline"
+                                  class="
+                                    custom-control
+                                    custom-radio
+                                    custom-control-inline
+                                  "
                                 >
                                   <input
                                     type="radio"
@@ -121,7 +134,12 @@
                                   >
                                 </div>
                                 <div
-                                  class="custom-control custom-radio custom-control-inline ml-3"
+                                  class="
+                                    custom-control
+                                    custom-radio
+                                    custom-control-inline
+                                    ml-3
+                                  "
                                 >
                                   <input
                                     type="radio"

@@ -36,14 +36,23 @@ export class ProfileComponent implements OnInit {
     };
 
 
-    this.userDataService.user.userId;
+    // this.userDataService.user.userId;
 
-    this.patientService.getPatientById(this.userDataService.user.userId).then(res => {
 
-      this.getpatientUserId = res.data;
 
+    this.patientService.listUserPatient(this.userDataService.user.userId).then(res => {
+      this.listUserPatient = res.data;
+      console.log("List User Patient ==>  ",res.data);
+       console.log("=======>>",res.data);
+
+      for(let i=0;i<res.data.length;i++){
+        if(res.data[i].email == this.userDataService.user.email){
+
+          this.getpatientUserId = res.data[i];
+
+        }
+      }
       this.cityid = this.getpatientUserId.cityId
-
 
       this.patientForm = new FormGroup({
         patientName:new FormControl('',Validators.required),

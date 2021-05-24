@@ -37,4 +37,8 @@ export class PatientService {
   getEditPatientById(patientProfileId :any):Promise<any> {
     return this.http.get(`${environment.base_URL}getEditUserPatient/${patientProfileId}`).toPromise();
   }
+
+  updateUserProfile(model:any):Observable<any>{
+    return this.http.put(`${environment.base_URL}updateUserProfile`,model);
+  }
 }

@@ -21,7 +21,7 @@ export class EditprofileComponent implements OnInit {
     private route: ActivatedRoute,
     public userdataservice: UserdataService,
     private rut: Router,
-    private messageService: MessageService,
+    private messageService: MessageService
   ) {}
   ngOnInit(): void {
 
@@ -45,13 +45,17 @@ export class EditprofileComponent implements OnInit {
         pincode:new FormControl(this.userData.pincode,Validators.required),
         cityId:new FormControl(this.userData.cityId,Validators.required),
         //roleid: new FormControl(2,Validators.required)
+        userId:new FormControl(this.userdataservice.user.userId)
       })
     })
   }
   submit(){
 
     // if(this.id){
+      this.patientService.updateUserProfile(this.editPatientForm.value).subscribe(res => {
+        console.log(res.data);
 
+      })
     // this.Service.updateUserProfile(this.editPatientForm.value).subscribe(res => {
     // this.messageService.add({severity:'success',summary:'Updated',detail:res.msg});
     // })
