@@ -70,6 +70,11 @@ export class AppointmentComponent implements OnInit {
       this.appointmentService.acceptRejectAppointment(this.Appointment).subscribe(res => {
       console.log("stauts accpet",res);
     })
+    this.appointmentService.listAppointment(this.userDataService.user.userId).then(res => {
+      this.listAppointment = res.data;
+      console.log(res.data);
+
+    })
   }
 
   reject(value){
@@ -77,6 +82,11 @@ export class AppointmentComponent implements OnInit {
     this.Appointment={"appointmentId":value,"appointmentStatusId":this.statusId=2}
     this.appointmentService.acceptRejectAppointment(this.Appointment).subscribe(res => {
       console.log("stauts accpet",res);
+    })
+    this.appointmentService.listAppointment(this.userDataService.user.userId).then(res => {
+      this.listAppointment = res.data;
+      console.log(res.data);
+
     })
   }
 

@@ -31,9 +31,11 @@ export class DoctorService {
     return this.http.get(`${environment.base_URL}getDoctorById/${userId}`).toPromise();
   }
 
-  updateDoctor(model:any,file:any):Observable<any>{
+  updateDoctor(data:any,file:File):Observable<any>{
 
     const formData = new FormData();
+    let strfy = JSON.stringify(data);
+    formData.append('user',strfy);
     formData.append('profile',file);
     //formData.append('data',model);
     return this.http.post(`${environment.base_URL}updateDoctor`,formData)

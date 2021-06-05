@@ -36,7 +36,7 @@ export class PrescriptionComponent implements OnInit {
   Appointment: {};
   public medicine: any[] = [{
     //id: 1,
-    medicineName: '',
+    medicineId: '',
     frequency: '',
     duration: '',
     instructions: ''
@@ -129,7 +129,7 @@ export class PrescriptionComponent implements OnInit {
   addMore() {
     this.medicine.push({
     //id: this.addresses.length + 1,
-    medicineName: '',
+    medicineId: '',
     frequency: '',
     duration: '',
     instructions: ''
@@ -142,6 +142,7 @@ export class PrescriptionComponent implements OnInit {
 
 
   submit() {
+    this.prescriptionMedicineForm.addControl("med",new FormControl(this.medicine))
     console.log(this.prescriptionMedicineForm.value);
     console.log("med",this.medicine);
     var data = {}

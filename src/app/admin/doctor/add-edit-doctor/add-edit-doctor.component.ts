@@ -91,7 +91,7 @@ export class AddEditDoctorComponent implements OnInit {
      var  data = {"doctorProfileBean":this.doctorForm.value,"profile":this.file}
       // console.log("pic",this.baseData);
 
-      this.doctorService.updateDoctor(data,this.file).subscribe(res =>{
+      this.doctorService.updateDoctor(this.doctorForm.value,this.file).subscribe(res =>{
         this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
         // console.log(res);
         this.rout.navigateByUrl('admin/doctor');

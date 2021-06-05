@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // base_URL:'https://healthassists.herokuapp.com/'
-  base_URL:'http://localhost:9797/'
+  base_URL:'https://healthassists.herokuapp.com/'
+  // base_URL:'http://localhost:9797/'
 
 };
 

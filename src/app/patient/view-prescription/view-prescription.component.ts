@@ -46,6 +46,8 @@ export class ViewPrescriptionComponent implements OnInit {
         this.listDietUser = res.data;
       })
 
+
+      //
       this.appointmentService.pastAppointmentList(this.patientData.patientProfileId).then(res => {
         this.pastAppointmentList = res.data;
       })
