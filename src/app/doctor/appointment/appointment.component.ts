@@ -93,11 +93,13 @@ export class AppointmentComponent implements OnInit {
   submit(){
     if(this.appointmentId){
 
-      this.appointmentService.updateRescheduleAppointment(this.RescheduleForm.value).subscribe(res => {
-      this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
-      console.log("RE",this.RescheduleForm.value);
+    //   this.appointmentService.updateRescheduleAppointment(this.RescheduleForm.value).subscribe(res => {
+    //   this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
+    //   console.log("RE",this.RescheduleForm.value);
 
-    })
+    // })
+    console.log("status",this.RescheduleForm.value);
+
 
     this.appointmentService.rescheduleReason(this.RescheduleForm.value).subscribe(res => {
       if(res.status == 200){
@@ -113,11 +115,11 @@ export class AppointmentComponent implements OnInit {
 
   rejectSubmit(){
     if(this.appointmentId){
-      this.appointmentService.updateRejectAppointment(this.RejectForm.value).subscribe(res => {
-      this.messageService.add({severity: 'error', summary: 'Error', detail: "You Have Reject Appointment"});
-      console.log("rr",this.RejectForm.value);
+    //   this.appointmentService.updateRejectAppointment(this.RejectForm.value).subscribe(res => {
+    //   this.messageService.add({severity: 'error', summary: 'Error', detail: "You Have Reject Appointment"});
+    //   console.log("rr",this.RejectForm.value);
 
-    })
+    // })
 
     this.appointmentService.rejectReason(this.RejectForm.value).subscribe(res => {
       if(res.status == 200){

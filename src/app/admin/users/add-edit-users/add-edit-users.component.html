@@ -47,9 +47,44 @@
                 <label>Password</label>
                 <input
                   class="form-control"
-                  type="text"
+                  type="password"
                   formControlName="password"
                 />
+              </div>
+            </div>
+
+
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Choose Role</label>
+                <select
+                  class="browser-default custom-select mb-4"
+                  formControlName="roleId"
+                >
+                  <option value="" disabled>Choose Role</option>
+                  <option *ngFor="let r of listRole" value="{{ r.roleId }}">
+                    {{ r.roleName }}
+                  </option>
+                  <!-- -->
+                </select>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Choose Status</label>
+                <select
+                  class="browser-default custom-select mb-4"
+                  formControlName="status"
+                >
+
+                  <option  value="" disabled>Choose Status</option>
+                  <option value=1>{{signupService.status[1]}}</option>
+                  <option value=2>{{signupService.status[2]}}</option>
+                  <option value=3>{{signupService.status[3]}}</option>
+                  <option value=4>{{signupService.status[4]}}</option>
+                  <option value=5>{{signupService.status[5]}}</option>
+                  <!-- -->
+                </select>
               </div>
             </div>
             <div class="col-sm-6">
@@ -90,21 +125,6 @@
             </div>
 
             <br /><br />
-            <div class="col-sm-6">
-              <div class="form-group">
-                <label>Choose Role</label>
-                <select
-                  class="browser-default custom-select mb-4"
-                  formControlName="roleId"
-                >
-                  <option value="" selected>Choose Role</option>
-                  <option *ngFor="let r of listRole" value="{{ r.roleId }}">
-                    {{ r.roleName }}
-                  </option>
-                  <!-- -->
-                </select>
-              </div>
-            </div>
           </div>
 
           <div class="m-t-20 text-center">

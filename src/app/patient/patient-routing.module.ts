@@ -19,13 +19,14 @@ const routes: Routes = [
   {path:'view-prescription/:appointmentId',component:ViewPrescriptionComponent,canActivate:[AuthGuard]},
   {path:'book-appointment',component:BookAppointmentComponent,canActivate:[AuthGuard]},
   {path:'doctor-appointment/:userId',component:DoctorAppointmentComponent,canActivate:[AuthGuard]},
-  {path:'doctor-list',component:DoctorComponent,canActivate:[AuthGuard]},
-  {path:'doctor-profile/:userId',component:DoctorprofileComponent,canActivate:[AuthGuard]},
-  {path:'pathology-list',component:PathologyComponent,canActivate:[AuthGuard]},
+  {path:'doctor-list',component:DoctorComponent},
+  {path:'doctor-profile/:userId',component:DoctorprofileComponent},
+  {path:'pathology-list',component:PathologyComponent},
   {path:'pathology-learn/:pathologyId',component:PathologyAboutComponent},
-  {path:'pharmacy-list',component:PharmacyComponent,canActivate:[AuthGuard]},
+  {path:'pharmacy-list',component:PharmacyComponent},
   {path:'pharmacy-learn/:pharmacyId',component:PharmacyAboutComponent},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'editfamilymember/:patientProfileId',component:ProfileComponent,canActivate:[AuthGuard]},
   {path:'edit-patientprofile/:patientProfileId',component:EditprofileComponent,canActivate:[AuthGuard]},
   {path:'view-appointment',component:ViewAppointmentComponent,canActivate:[AuthGuard]}
 ];

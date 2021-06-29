@@ -38,7 +38,24 @@ export class PatientService {
     return this.http.get(`${environment.base_URL}getEditUserPatient/${patientProfileId}`).toPromise();
   }
 
-  updateUserProfile(model:any):Observable<any>{
-    return this.http.put(`${environment.base_URL}updateUserProfile`,model);
+  updateUserProfile(data:any,file:File):Observable<any>{
+
+    const formData = new FormData();
+    let strfy = JSON.stringify(data);
+    formData.append('user',strfy);
+    formData.append('profile',file);
+    //formData.append('data',model);
+    return this.http.put(`${environment.base_URL}updateUserProfile`,formData)
+
+    // return this.http.put(`${environment.base_URL}`,model);
   }
+
+  getFamilyMember(patientProfileId :any):Promise<any> {
+    return this.http.get(`${environment.base_URL}getFamilyMember/${patientProfileId}`).toPromise();
+  }
+
+  updateFamilyMember(model :any):Observable<any> {
+    return this.http.put(`${environment.base_URL}updateFamilyMember`,model);
+  }
+
 }

@@ -58,8 +58,9 @@
 
     <div class="row">
       <div class="col-lg-4">
+
         <img
-          src="./assets/images/Home/doctor.jpg"
+        [src]="['http://localhost:9797/'+getDoctorUserId.profilePic]"
           class="img-fluid"
           alt=""
           style="border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5)"
@@ -92,7 +93,7 @@
               <li>
                 <mdb-icon fas icon="angle-right"></mdb-icon>&nbsp;
                 <strong><b> Experience:</b></strong>
-                {{ getDoctorUserId.experience_in_year }}
+                {{ getDoctorUserId.experience }}
               </li>
               <!-- <li><mdb-icon fas icon="angle-right"></mdb-icon>&nbsp; <strong>Degree:</strong> BSC(IT)</li> -->
               <li>

@@ -20,6 +20,7 @@ import { AddEditDiseaseComponent } from './disease/add-edit-disease/add-edit-dis
 import { ButtonModule } from 'primeng/button';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 
 
@@ -30,6 +31,7 @@ import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.co
     DoctorRoutingModule,
     MDBBootstrapModule.forRoot(),
     DataTablesModule,
+    ConfirmDialogModule,
     ButtonModule,
     FormsModule,
     ReactiveFormsModule

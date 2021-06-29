@@ -11,6 +11,8 @@ import { UserdataService } from './userdata.service';
 })
 export class SignupLoginService {
 
+  public status:any= {1:"Active", 2:"Pending" , 3:"Disable" , 4:"Pause" ,5:"KYC_DOCTOR"};
+
   constructor(private http:HttpClient,private rout:Router,private userData:UserdataService) { }
 
   signup(model:any):Observable<any>{
@@ -28,6 +30,11 @@ export class SignupLoginService {
   setNewPassword(data:any):Observable<any>{
     return this.http.get(`${environment.base_URL}setNewPassword/`+data.otp+"/"+data.newpassword+"/"+data.email);
   }
+
+  verifyUser(data:any):Observable<any>{
+    return this.http.get(`${environment.base_URL}verifyUser/`+data.otp+"/"+data.email);
+  }
+
 
   isLoggedIn(){
     if(this.userData.user.email.length == 0 && this.userData.user.password.length == 0){

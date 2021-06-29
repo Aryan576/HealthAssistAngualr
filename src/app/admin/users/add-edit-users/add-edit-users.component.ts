@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { Users } from 'src/app/interface/users';
 import { RoleService } from 'src/app/services/role.service';
+import { SignupLoginService } from 'src/app/services/signup-login.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -22,7 +23,8 @@ export class AddEditUsersComponent implements OnInit {
     private userService: UsersService,
     private rout: Router,
     private messageService: MessageService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    public signupService:SignupLoginService
   ) {}
 
   ngOnInit(): void {
@@ -57,13 +59,16 @@ export class AddEditUsersComponent implements OnInit {
       password: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       roleId: new FormControl('', Validators.required),
+      status:new FormControl('',Validators.required)
+
     });
   }
 
   submit() {
     if(this.id){
+      console.log("data ",this.userForm.value);
+
       this.userService.updateUser(this.userForm.value).subscribe(res => {
-        console.log(res);
         this.messageService.add({severity: 'success',summary: 'Success',detail: 'Updated Signup!!'});
         this.rout.navigateByUrl('admin/users');
 

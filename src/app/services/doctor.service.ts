@@ -23,8 +23,16 @@ export class DoctorService {
     return this.http.get(`${environment.base_URL}listDoctor`).toPromise();
   }
 
-  addDoctor(model:any):Observable<any>{
-    return this.http.post(`${environment.base_URL}doctorSignup`,model);
+  addDoctor(data:any,file:File):Observable<any>{
+    const formData = new FormData();
+    let strfy = JSON.stringify(data);
+    formData.append('user',strfy);
+    formData.append('profile',file);
+    //formData.append('data',model);
+    return this.http.post(`${environment.base_URL}doctorSignup`,formData)
+
+
+    // return this.http.post(`${environment.base_URL}doctorSignup`,model);
   }
 
   getDoctorById(userId:any):Promise<any>{

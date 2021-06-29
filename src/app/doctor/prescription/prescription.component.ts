@@ -156,11 +156,18 @@ export class PrescriptionComponent implements OnInit {
     this.diseaseService.addAppointmentDiseasePatient(this.diseaseForm.value).subscribe(res => {
       this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
     })
+    this.diseaseService.listDisease().then(res => {
+      this.listDisease = res.data;
+    })
+
   }
 
   dietUserSubmit(){
     this.dietService.addDietUser(this.dietUserForm.value).subscribe(res => {
     this.messageService.add({severity: 'success', summary: 'Success', detail: res.msg});
+    })
+    this.dietService.listDiet().then(res => {
+      this.listDiet = res.data;
     })
   }
 

@@ -9,7 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
   {path:'pharmacy-dashboard',component:PharmacyDetailComponent,canActivate:[AuthGuard]},
   {path:'edit-user-pharmacy/:pharmacyId',component:PharmacyDetailComponent,canActivate:[AuthGuard]},
-  {path:'pharmacy-about',component:PharmacyComponent,canActivate:[AuthGuard]},
+  {path:'pharmacy-about/:pharmacyId',component:PharmacyComponent,canActivate:[AuthGuard]},
   {path:'pharmacy-profile',component:ProfileComponent,canActivate:[AuthGuard]}
 ];
 

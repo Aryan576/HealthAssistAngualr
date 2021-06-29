@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
     private confirmationService: ConfirmationService,
     private route: ActivatedRoute,
     private doctorService: DoctorService,
-    private rut: Router,
+    private rout: Router,
     private messageService: MessageService,
     private clinicService:ClinicService
   ) {}
@@ -74,8 +74,15 @@ export class ProfileComponent implements OnInit {
 
     this.doctorService.addDoctorClinic(this.doctorClinicForm.value).subscribe(res => {
       console.log(res);
+      this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Updated!!'});
+      // this.rout.navigateByUrl('doctor/doctor-medicine');
 
     })
+    this.clinicService.listClinic().then(res => {
+      this.listClinic = res.data
+
+    })
+
   }
 
   delete(value) {

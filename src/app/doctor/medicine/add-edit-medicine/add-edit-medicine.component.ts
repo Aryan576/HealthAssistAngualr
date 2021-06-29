@@ -55,7 +55,7 @@ export class AddEditMedicineComponent implements OnInit {
     else{
       if(this.medicineForm.valid){
         this.medicineService.addMedicine(this.medicineForm.value).subscribe(res => {
-          this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Added disease!!',});
+          this.messageService.add({severity: 'success',summary: 'Success',detail: 'Successfully Added Medicine!!',});
           console.log(res);
           this.rout.navigateByUrl('doctor/doctor-medicine');
         })

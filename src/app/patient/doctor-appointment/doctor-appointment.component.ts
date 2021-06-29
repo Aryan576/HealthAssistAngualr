@@ -25,6 +25,7 @@ export class DoctorAppointmentComponent implements OnInit {
   myDate = new Date();
   a: string = '';
   getDoctorUserId: Doctor;
+  todaysdate = new Date()
 
   constructor(
     private doctorClinicService: DoctorClinicService,

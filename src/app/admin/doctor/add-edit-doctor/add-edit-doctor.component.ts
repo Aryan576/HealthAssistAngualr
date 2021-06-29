@@ -38,8 +38,8 @@ export class AddEditDoctorComponent implements OnInit {
         qualification: new FormControl(this.doctorData.qualification, Validators.required),
         about: new FormControl(this.doctorData.about, Validators.required),
         specialization: new FormControl(this.doctorData.specialization, Validators.required),
-        // profile_pic:new FormControl(this.doctorData.profile_pic,Validators.required),
-        experience_in_year: new FormControl(this.doctorData.experience_in_year, Validators.required),
+        profilePic:new FormControl(this.doctorData.profilePic,Validators.required),
+        experience: new FormControl(this.doctorData.experience, Validators.required),
         registrationNo: new FormControl(this.doctorData.registrationNo, Validators.required),
 
       });
@@ -55,7 +55,7 @@ export class AddEditDoctorComponent implements OnInit {
       qualification: new FormControl('', Validators.required),
       about: new FormControl('', Validators.required),
       specialization: new FormControl('', Validators.required),
-      experience_in_year: new FormControl('', Validators.required),
+      experience: new FormControl('', Validators.required),
       // profile_pic:new FormControl(this.files,Validators.required),
       registrationNo: new FormControl('', Validators.required),
     });
@@ -99,7 +99,7 @@ export class AddEditDoctorComponent implements OnInit {
     }
     else{
       if (this.doctorForm.valid) {
-        this.doctorService.addDoctor(this.doctorForm.value).subscribe(res => {
+        this.doctorService.addDoctor(this.doctorForm.value,this.file).subscribe(res => {
           // if (res.status != 200) {
             this.messageService.add({severity:'success', summary: 'Success', detail:'Successfully Signup!!'});
             // console.log(res.data);

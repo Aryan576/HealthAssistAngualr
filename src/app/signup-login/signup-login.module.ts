@@ -6,10 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupLoginComponent } from './signup-login/signup-login.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { OtpVerifyComponent } from './otp-verify/otp-verify.component';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
 
 
 @NgModule({
-  declarations: [SignupLoginComponent, ResetPasswordComponent, OtpVerifyComponent],
+  declarations: [SignupLoginComponent, ResetPasswordComponent, OtpVerifyComponent, VerifyUserComponent],
   imports: [
     CommonModule,
     SignupLoginRoutingModule,

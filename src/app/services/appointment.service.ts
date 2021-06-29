@@ -45,7 +45,9 @@ export class AppointmentService {
   }
 
   rescheduleReason(data : any):Observable<any> {
-    return this.http.get(`${environment.base_URL}rescheduleReason/`+data.email+"/"+data.appointmentid);
+    console.log(data);
+
+    return this.http.post(`${environment.base_URL}rescheduleReason/`,data);
   }
 
   updateRescheduleAppointment(model :any):Observable<any> {
@@ -53,7 +55,7 @@ export class AppointmentService {
   }
 
   rejectReason(data : any):Observable<any> {
-    return this.http.get(`${environment.base_URL}rejectReason/`+data.email+"/"+data.appointmentid);
+    return this.http.post(`${environment.base_URL}rejectReason/`,data);
   }
 
   updateRejectAppointment(model :any):Observable<any> {
@@ -81,6 +83,6 @@ export class AppointmentService {
   }
 
   listDoctClinic(userId : any):Promise <any> {
-    return this.http.get(`${environment.base_URL}listDoctClinic/${userId}`).toPromise();
+    return this.http.get(`${environment.base_URL}listDoctorClinic/${userId}`).toPromise();
   }
 }

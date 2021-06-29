@@ -21,6 +21,8 @@ export class ProfileComponent implements OnInit {
   phoneno: String;
   cityid: number;
   pincode: number;
+  patientProfileId = 0
+  getFamilyMemberId : Patient
 
   constructor(
     public userDataService: UserdataService,
@@ -37,6 +39,25 @@ export class ProfileComponent implements OnInit {
 
 
     // this.userDataService.user.userId;
+    this.patientProfileId = this.route.snapshot.params.patientid
+    console.log(this.patientProfileId);
+
+    this.patientService.getFamilyMember(this.patientProfileId).then(res => {
+
+      this.getFamilyMemberId= res.data;
+      console.log("fam",this.getFamilyMemberId);
+
+      this.patientForm = new FormGroup({
+        patientProfileId:new FormControl(this.getFamilyMemberId.patientProfileId,Validators.required),
+        patientName:new FormControl(this.getFamilyMemberId.patientName,Validators.required),
+        gender:new FormControl(this.getFamilyMemberId.gender,Validators.required),
+        phoneNo: new FormControl(this.getFamilyMemberId.phoneNo,Validators.required),
+        email:new FormControl(this.getFamilyMemberId.email,Validators.required),
+        age:new FormControl(this.getFamilyMemberId.age,Validators.required),
+        userId:new FormControl(this.userDataService.user.userId,Validators.required),
+      })
+
+    })
 
 
 
@@ -47,9 +68,7 @@ export class ProfileComponent implements OnInit {
 
       for(let i=0;i<res.data.length;i++){
         if(res.data[i].email == this.userDataService.user.email){
-
           this.getpatientUserId = res.data[i];
-
         }
       }
       this.cityid = this.getpatientUserId.cityId
@@ -74,9 +93,17 @@ export class ProfileComponent implements OnInit {
   }
 
   submit(){
-    this.patientService.addFamilyMember(this.patientForm.value).subscribe(res => {
-      this.messageService.add({ severity: 'success', summary: 'Success', detail: res.msg });
-    })
-    console.log(this.patientForm.value);
+    if(this.patientProfileId){
+      this.patientService.updateFamilyMember(this.patientForm.value).subscribe(res => {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: res.msg });
+      })
+    }
+    else{
+      this.patientService.addFamilyMember(this.patientForm.value).subscribe(res => {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: res.msg });
+      })
+      console.log(this.patientForm.value);
+    }
+
   }
 }

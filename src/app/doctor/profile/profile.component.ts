@@ -19,8 +19,8 @@ export class ProfileComponent implements OnInit {
 
     this.doctorService.getDoctorById(this.userdata.user.userId).then(res => {
       this.doctorData = res.data
-      // console.log(this.doctorData.firstName);
-      // console.log("Res "+res.data);
+      console.log(this.doctorData.firstName);
+      console.log("Res ",res.data);
     })
   }
 }

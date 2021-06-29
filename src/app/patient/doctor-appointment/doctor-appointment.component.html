@@ -87,6 +87,8 @@
               <input
                 class="form-control"
                 type="date"
+                [min]="todaysdate | date:'y-MM-dd'"
+
                 formControlName="appointmentDate"
               />
             </div>

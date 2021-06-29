@@ -12,7 +12,7 @@
             <div class="profile-img-wrap">
               <div class="profile-img">
                 <a href="#"
-                  ><img class="avatar" src="assets/img/doctor-03.jpg" alt=""
+                  ><img class="avatar" [src]="['http://localhost:9797/'+getDoctorUserId.profilePic]" alt=""
                 /></a>
               </div>
             </div>
@@ -61,7 +61,7 @@
                     <li>
                       <span class="title">Experience:</span>
                       <span class="text">{{
-                        getDoctorUserId.experience_in_year
+                        getDoctorUserId.experience
                       }}</span>
                     </li>
                   </ul>

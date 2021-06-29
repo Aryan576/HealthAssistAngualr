@@ -22,6 +22,7 @@ export class ViewPrescriptionComponent implements OnInit {
   listDietUser: {};
   listPrescriptionMedicine: {};
   pastAppointmentList: {};
+  med:{};
   constructor(
     private route: ActivatedRoute,
     private prescriptionService: PrescriptionService,
@@ -58,7 +59,9 @@ export class ViewPrescriptionComponent implements OnInit {
     })
 
     this.prescriptionService.listPrescriptionMedicine(this.id).then(res => {
-      this.listPrescriptionMedicine = res.data;
+      this.listPrescriptionMedicine = res.data[0];
+      this.med = res.data[0].med
+      console.log("med",this.med);
       console.log("lis",this.listPrescriptionMedicine);
 
     })

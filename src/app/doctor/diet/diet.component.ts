@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { DietService } from 'src/app/services/diet.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class DietComponent implements OnInit {
 
   dtOptions: DataTables.Settings = {};
   dietList : {}
-  constructor(private dietService:DietService) { }
+  constructor(private dietService:DietService,private confirmationService: ConfirmationService,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -22,10 +24,27 @@ export class DietComponent implements OnInit {
     })
   }
   delete(value){
-    this.dietService.deleteDiet(value).subscribe(res => {
-      console.log("Diet Deleted!!");
 
-    })
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.dietService.deleteDiet(value).subscribe(res => {
+          console.log("Diet Deleted!!");
+
+        })
+          },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+        });
+      },
+    });
+
+
   }
 
 }

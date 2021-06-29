@@ -26,6 +26,7 @@ export class BookAppointmentComponent implements OnInit {
   a: string = '';
   listDoctorClinic: {};
   listDoctorClinicTiming :{};
+  todaysdate = new Date()
 
   constructor(
     private datePipe: DatePipe,
@@ -44,7 +45,7 @@ export class BookAppointmentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    console.log("date , ",this.todaysdate)
     this.doctorClinicService.listDoctorClinic(this.userDataService.user.userId).then(res => {
       this.listDoctorClinic = res.data;
     })

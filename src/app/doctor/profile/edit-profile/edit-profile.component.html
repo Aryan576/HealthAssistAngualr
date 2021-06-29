@@ -44,7 +44,7 @@
                 <label>Password</label>
                 <input
                   class="form-control"
-                  type="text"
+                  type="password"
                   formControlName="password"
                 />
               </div>
@@ -113,7 +113,7 @@
                 <input
                   class="form-control"
                   type="text"
-                  formControlName="experience_in_year"
+                  formControlName="experience"
                 />
               </div>
             </div>
@@ -138,7 +138,7 @@
                     <img alt="" src="assets/img/user.jpg" />
                   </div>
                   <div class="upload-input">
-                    <input type="file" class="form-control" />
+                    <input type="file" (change)="uploadFile($event)" class="form-control" />
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfirmationService, MessageService } from 'primeng/api';
 import { MedicineService } from 'src/app/services/medicine.service';
 
 @Component({
@@ -9,8 +10,9 @@ import { MedicineService } from 'src/app/services/medicine.service';
 export class MedicineComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   medicineList:{}
-  
-  constructor(private medicineService:MedicineService) { }
+
+  constructor(private medicineService:MedicineService, private confirmationService: ConfirmationService,
+    private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.dtOptions = {
@@ -23,8 +25,26 @@ export class MedicineComponent implements OnInit {
 
   }
   delete(value){
-    this.medicineService.deleteMedicine(value).subscribe(res => {
-      console.log("Medicine Deleted!!");
+
+    this.confirmationService.confirm({
+      message: 'Are you sure that you want to proceed?',
+      header: 'Confirmation',
+      icon: 'pi pi-exclamation-triangle',
+      accept: () => {
+        this.medicineService.deleteMedicine(value).subscribe(res => {
+          console.log("Medicine Deleted!!");
+        })
+      },
+      reject: () => {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Rejected',
+          detail: 'You have rejected',
+        });
+      },
+    });
+    this.medicineService.listMedicine().then(res => {
+      this.medicineList = res.data
     })
   }
 }

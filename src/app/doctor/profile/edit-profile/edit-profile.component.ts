@@ -38,11 +38,23 @@ export class EditProfileComponent implements OnInit {
         gender:new FormControl(this.DoctorProfileData.gender,Validators.required),
         specialization:new FormControl(this.DoctorProfileData.specialization,Validators.required),
         qualification:new FormControl(this.DoctorProfileData.qualification,Validators.required),
-        experience_in_year:new FormControl(this.DoctorProfileData.experience_in_year,Validators.required),
-        about:new FormControl(this.DoctorProfileData.about,Validators.required)
+        experience:new FormControl(this.DoctorProfileData.experience,Validators.required),
+        about:new FormControl(this.DoctorProfileData.about,Validators.required),
+        registrationNo:new FormControl(this.DoctorProfileData.registrationNo),
+        profilePic:new FormControl(this.DoctorProfileData.profilePic)
       })
 
     })
+  }
+
+  uploadFile(event:any){
+    console.log(event.target.files)
+    this.file = event.target.files[0];
+    console.log(this.file)
+    // this.doctorService.saveFile(file).subscribe(resp=>{
+    //   console.log(resp);
+    // })
+
   }
 
   submit(){

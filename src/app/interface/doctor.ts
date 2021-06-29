@@ -8,8 +8,9 @@ export interface Doctor {
   status: number;
   qualification: String;
   specialization: String;
-  experience_in_year: number;
+  experience: number;
   profile_pic: FileList;
   about: String;
   registrationNo: String;
+  profilePic:String;
 }
